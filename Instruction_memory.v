@@ -22,7 +22,7 @@ module Instruction_memory(
 	 input Clk,
 	 input Rst,
     input [31:0] ImemRdAddr,
-	 input [3:0] type,
+	 input [5:0] type,
     output reg [31:0] Instruction
     );
 	
@@ -38,7 +38,7 @@ always @(posedge Clk)
 begin
 	if(Rst == 1'b1)
 		Instruction <= 32'hffffffff;
-	else if(type == 4'h3 | type == 4'h4)
+	else if(type == 6'b111111)
 		Instruction <= InstMem[ImemRdAddr - 1];
 	else
 		Instruction <= InstMem[ImemRdAddr];

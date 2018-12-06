@@ -4,8 +4,8 @@
      changes made to this file may result in unpredictable
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
-<DeviceUsageSummary rev="116">
-<DesignStatistics TimeStamp="Thu Dec 06 11:05:37 2018"><group name="NetStatistics">
+<DeviceUsageSummary rev="119">
+<DesignStatistics TimeStamp="Thu Dec 06 17:19:40 2018"><group name="NetStatistics">
 <item name="NumNets_Active" rev="82">
 <attrib name="value" value="2687"/></item>
 <item name="NumNets_Gnd" rev="82">
@@ -120,72 +120,72 @@
 <attrib name="value" value="75"/></item>
 </group>
 <group name="MiscellaneousStatistics">
-<item name="AGG_BONDED_IO" rev="116">
+<item name="AGG_BONDED_IO" rev="119">
 <attrib name="value" value="50"/></item>
-<item name="AGG_IO" rev="116">
+<item name="AGG_IO" rev="119">
 <attrib name="value" value="50"/></item>
-<item name="AGG_LOCED_IO" rev="116">
+<item name="AGG_LOCED_IO" rev="119">
 <attrib name="value" value="18"/></item>
-<item name="AGG_SLICE" rev="116">
-<attrib name="value" value="239"/></item>
-<item name="NUM_BONDED_IOB" rev="116">
+<item name="AGG_SLICE" rev="119">
+<attrib name="value" value="221"/></item>
+<item name="NUM_BONDED_IOB" rev="119">
 <attrib name="value" value="50"/></item>
-<item name="NUM_BSFULL" rev="116">
-<attrib name="value" value="228"/></item>
-<item name="NUM_BSLUTONLY" rev="116">
-<attrib name="value" value="397"/></item>
-<item name="NUM_BSREGONLY" rev="116">
-<attrib name="value" value="83"/></item>
-<item name="NUM_BSUSED" rev="116">
-<attrib name="value" value="708"/></item>
-<item name="NUM_BUFG" rev="116">
+<item name="NUM_BSFULL" rev="119">
+<attrib name="value" value="226"/></item>
+<item name="NUM_BSLUTONLY" rev="119">
+<attrib name="value" value="428"/></item>
+<item name="NUM_BSREGONLY" rev="119">
+<attrib name="value" value="56"/></item>
+<item name="NUM_BSUSED" rev="119">
+<attrib name="value" value="710"/></item>
+<item name="NUM_BUFG" rev="119">
 <attrib name="value" value="1"/></item>
-<item name="NUM_LOCED_IOB" rev="116">
+<item name="NUM_LOCED_IOB" rev="119">
 <attrib name="value" value="18"/></item>
-<item name="NUM_LOGIC_O5ANDO6" rev="116">
-<attrib name="value" value="88"/></item>
-<item name="NUM_LOGIC_O5ONLY" rev="116">
+<item name="NUM_LOGIC_O5ANDO6" rev="119">
+<attrib name="value" value="70"/></item>
+<item name="NUM_LOGIC_O5ONLY" rev="119">
 <attrib name="value" value="28"/></item>
-<item name="NUM_LOGIC_O6ONLY" rev="116">
-<attrib name="value" value="486"/></item>
-<item name="NUM_LUT_RT_DRIVES_CARRY4" rev="116">
+<item name="NUM_LOGIC_O6ONLY" rev="119">
+<attrib name="value" value="548"/></item>
+<item name="NUM_LUT_RT_DRIVES_CARRY4" rev="119">
 <attrib name="value" value="1"/></item>
-<item name="NUM_LUT_RT_DRIVES_FLOP" rev="116">
-<attrib name="value" value="20"/></item>
-<item name="NUM_LUT_RT_EXO5" rev="116">
-<attrib name="value" value="20"/></item>
-<item name="NUM_LUT_RT_EXO6" rev="116">
+<item name="NUM_LUT_RT_DRIVES_FLOP" rev="119">
+<attrib name="value" value="5"/></item>
+<item name="NUM_LUT_RT_EXO5" rev="119">
+<attrib name="value" value="5"/></item>
+<item name="NUM_LUT_RT_EXO6" rev="119">
 <attrib name="value" value="1"/></item>
-<item name="NUM_LUT_RT_O5" rev="116">
-<attrib name="value" value="1"/></item>
-<item name="NUM_LUT_RT_O6" rev="116">
+<item name="NUM_LUT_RT_O5" rev="119">
+<attrib name="value" value="31"/></item>
+<item name="NUM_LUT_RT_O6" rev="119">
 <attrib name="value" value="28"/></item>
-<item name="NUM_RAMB16BWER" rev="116">
+<item name="NUM_RAMB16BWER" rev="119">
 <attrib name="value" value="3"/></item>
-<item name="NUM_RAMB8BWER" rev="116">
+<item name="NUM_RAMB8BWER" rev="119">
 <attrib name="value" value="2"/></item>
-<item name="NUM_SLICEL" rev="116">
+<item name="NUM_SLICEL" rev="119">
+<attrib name="value" value="42"/></item>
+<item name="NUM_SLICEM" rev="119">
+<attrib name="value" value="1"/></item>
+<item name="NUM_SLICEX" rev="119">
+<attrib name="value" value="178"/></item>
+<item name="NUM_SLICE_CARRY4" rev="119">
 <attrib name="value" value="37"/></item>
-<item name="NUM_SLICEM" rev="116">
-<attrib name="value" value="1"/></item>
-<item name="NUM_SLICEX" rev="116">
-<attrib name="value" value="201"/></item>
-<item name="NUM_SLICE_CARRY4" rev="116">
-<attrib name="value" value="36"/></item>
-<item name="NUM_SLICE_CONTROLSET" rev="116">
+<item name="NUM_SLICE_CONTROLSET" rev="119">
 <attrib name="value" value="3"/></item>
-<item name="NUM_SLICE_CYINIT" rev="116">
-<attrib name="value" value="747"/></item>
-<item name="NUM_SLICE_F7MUX" rev="116">
-<attrib name="value" value="1"/></item>
-<item name="NUM_SLICE_FF" rev="116">
-<attrib name="value" value="334"/></item>
-<item name="NUM_SLICE_UNUSEDCTRL" rev="116">
-<attrib name="value" value="146"/></item>
-<item name="NUM_SRL_O6ONLY" rev="116">
+<item name="NUM_SLICE_CYINIT" rev="119">
+<attrib name="value" value="788"/></item>
+<item name="NUM_SLICE_F7MUX" rev="119">
+<attrib name="value" value="5"/></item>
+<item name="NUM_SLICE_FF" rev="119">
+<attrib name="value" value="320"/></item>
+<item name="NUM_SLICE_UNUSEDCTRL" rev="119">
+<attrib name="value" value="136"/></item>
+<item name="NUM_SRL_O6ONLY" rev="119">
 <attrib name="value" value="2"/></item>
-<item name="NUM_UNUSABLE_FF_BELS" rev="116">
-<attrib name="value" value="8"/></item>
+<item name="NUM_UNUSABLE_FF_BELS" rev="119">
+<attrib name="value" value="14"/></item>
 </group>
 </DesignStatistics>
 <ReportConfigData TimeStamp="Sun Nov 18 19:56:01 2018"><group name="REG_SR">
@@ -248,7 +248,7 @@
 <item name="CLKA" rev="82">
 <attrib name="CLKA_INV" value="0"/><attrib name="CLKA" value="14"/></item>
 <item name="CLKB" rev="82">
-<attrib name="CLKB_INV" value="0"/><attrib name="CLKB" value="13"/></item>
+<attrib name="CLKB" value="13"/><attrib name="CLKB_INV" value="0"/></item>
 <item name="ENA" rev="82">
 <attrib name="ENA_INV" value="0"/><attrib name="ENA" value="14"/></item>
 <item name="ENB" rev="82">
@@ -308,7 +308,7 @@
 <item name="CLKA" rev="82">
 <attrib name="CLKA_INV" value="0"/><attrib name="CLKA" value="14"/></item>
 <item name="CLKB" rev="82">
-<attrib name="CLKB_INV" value="0"/><attrib name="CLKB" value="13"/></item>
+<attrib name="CLKB" value="13"/><attrib name="CLKB_INV" value="0"/></item>
 <item name="DATA_WIDTH_A" rev="82">
 <attrib name="18" value="13"/><attrib name="36" value="1"/></item>
 <item name="DATA_WIDTH_B" rev="82">

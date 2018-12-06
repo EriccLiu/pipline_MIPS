@@ -10,7 +10,7 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="13" />
+   <WVObjectSize size="22" />
    <wvobject fp_name="/Top_tb/Clk" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">Clk</obj_property>
       <obj_property name="ObjectShortName">Clk</obj_property>
@@ -28,6 +28,34 @@
       <obj_property name="ElementShortName">InstructionD[31:0]</obj_property>
       <obj_property name="ObjectShortName">InstructionD[31:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Top_tb/uut/Direct/InstructionD" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">InstructionD[31:0]</obj_property>
+      <obj_property name="ObjectShortName">InstructionD[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Top_tb/uut/Direct/InstructionE" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">InstructionE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">InstructionE[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Top_tb/uut/Direct/InstructionM" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">InstructionM[31:0]</obj_property>
+      <obj_property name="ObjectShortName">InstructionM[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Top_tb/uut/Direct/InstructionW" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">InstructionW[31:0]</obj_property>
+      <obj_property name="ObjectShortName">InstructionW[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Top_tb/uut/ConflictTypeD" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ConflictTypeD[5:0]</obj_property>
+      <obj_property name="ObjectShortName">ConflictTypeD[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Top_tb/uut/ConflictTypeE" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ConflictTypeE[5:0]</obj_property>
+      <obj_property name="ObjectShortName">ConflictTypeE[5:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/Top_tb/uut/register/regFile[0]" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">[0,31:0]</obj_property>
@@ -73,5 +101,19 @@
       <obj_property name="ElementShortName">[9,31:0]</obj_property>
       <obj_property name="ObjectShortName">regFile[9,31:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Top_tb/uut/Direct/one_dist/InstructionD" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">InstructionD[31:0]</obj_property>
+      <obj_property name="ObjectShortName">InstructionD[31:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Top_tb/uut/Direct/one_dist/InstructionE" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">InstructionE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">InstructionE[31:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Top_tb/uut/Direct/one_dist/outtype" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">outtype[5:0]</obj_property>
+      <obj_property name="ObjectShortName">outtype[5:0]</obj_property>
    </wvobject>
 </wave_config>

@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 module Data_selector(
 	 input Clk,
-    input [3:0] type,
+    input [5:0] type,
     input [31:0] ALUOutM,
     input [31:0] ALUOutW,
     input [31:0] ReadDataW,
@@ -42,10 +42,12 @@ end
 /*
  type类型对应的冲突类型：
  指令距离为1时
+ 
 	源为R类指令的结果
 	1h：目的是R类指令，执行周期指令结果与取值周期指令第一个操作数
 		目的是Load/Store/Beq指令
 	2h：目的是R类指令，执行周期指令结果与取值周期指令第二个操作数
+	
 	源为Load指令的结果
 	3h：目的是R类指令，执行周期指令结果与取值周期指令第一个操作数
 		目的是Load/Store/Beq指令
@@ -54,10 +56,12 @@ end
 	
 	
  指令距离为2时
+ 
 	源为R类指令的结果
 	5h：目的是R类指令，访存周期指令结果与取值周期指令第一个操作数
 		目的是Load/Store/Beq指令
 	6h：目的是R类指令，访存周期指令结果与取值周期指令第二个操作数
+	
 	源为Load指令的结果
 	7h：目的是R类指令，访存周期指令结果与取值周期指令第一个操作数
 		目的是Load/Store/Beq指令
@@ -65,6 +69,134 @@ end
 	
 */
 
+always @ (*)
+begin
+	// 初始化，防止漏掉情况
+	SrcAE <= ReadSrcAE;
+	SrcBE <= ReadSrcBE;
+	
+	case(type[5:4])
+	
+		// 源均为R类指令，或无冲突
+		2'b00:
+		begin
+			// 若type后两位为11，则说明目的指令为Load,Store或Beq
+			if(type[1:0] == 2'b11)
+			begin
+				// 距离为1冲突
+				if(type[3:2] == 2'b01)
+				begin
+					SrcAE <= ALUOutM;
+					SrcBE <= ReadSrcBE;
+				end
+				// 距离为2冲突
+				else if(type[3:2] == 2'b10)
+				begin
+					SrcAE <= ALUOutW;
+					SrcBE <= ReadSrcBE;
+				end
+				
+			end
+			
+			// 若type后两位不是11，则说明目的指令为R类，或无冲突
+			else
+			begin
+				// 第一个操作数赋值
+				// 无冲突
+				if(type[3:2] == 2'b00) SrcAE <= ReadSrcAE;
+				// 距离为1冲突
+				else if(type[3:2] == 2'b01) SrcAE <= ALUOutM;
+				// 距离为2冲突
+				else if(type[3:2] == 2'b10) SrcAE <= ALUOutW;
+				
+				// 第二个操作数赋值
+				// 无冲突
+				if(type[1:0] == 2'b00) SrcBE <= ReadSrcBE;
+				// 距离为1冲突
+				else if(type[1:0] == 2'b01) SrcBE <= ALUOutM;
+				// 距离为2冲突
+				else if(type[1:0] == 2'b10) SrcBE <= ALUOutW;
+
+			end
+		end
+		
+		
+		// 第一个源为R指令或无冲突，第二个源为Load指令
+		// 只可能与R类指令冲突，因为与L/S/B指令冲突时type前两位为10
+		2'b01:
+		begin
+			// 第一个操作数赋值
+			// 无冲突
+			if(type[3:2] == 2'b00) SrcAE <= ReadSrcAE;
+			// 距离为1冲突
+			else if(type[3:2] == 2'b01) SrcAE <= ALUOutM;
+			// 距离为2冲突
+			else if(type[3:2] == 2'b10) SrcAE <= ALUOutW;
+			
+			// 第二个操作数赋值
+			// 无冲突type前两位为00
+			// 距离为1冲突为暂停，不做操作
+			// 距离为2冲突
+			if(type[1:0] == 2'b10) SrcBE <= ReadDataW;
+		end
+		
+		
+		// 第一个源为Load指令，第二个源为R指令或无冲突
+		2'b10:
+		begin
+		// 若type后两位为11，则说明目的指令为Load,Store或Beq
+			if(type[1:0] == 2'b11)
+			begin
+				// 距离为1冲突,暂停不做操作
+				// 距离为2冲突
+				if(type[3:2] == 2'b10)
+				begin
+					SrcAE <= ReadDataW;
+					SrcBE <= ReadSrcBE;
+				end
+			end
+			
+			// 若type后两位不是11，则说明目的指令为R类
+			else
+			begin
+				// 第一个操作数赋值
+				// 无冲突
+				if(type[3:2] == 2'b00) SrcAE <= ReadSrcAE;
+				// 距离为1冲突，暂停不做操作
+				// 距离为2冲突
+				else if(type[3:2] == 2'b10) SrcAE <= ALUOutW;
+				
+				// 第二个操作数赋值
+				// 无冲突
+				if(type[1:0] == 2'b00) SrcBE <= ReadSrcBE;
+				// 距离为1冲突
+				else if(type[1:0] == 2'b01) SrcBE <= ALUOutM;
+				// 距离为2冲突
+				else if(type[1:0] == 2'b10) SrcBE <= ALUOutW;
+
+			end
+		end
+		
+		
+		// 源均为Load指令
+		2'b11:
+		begin
+			// 需要暂停的情况，不做操作
+			if(type[3:0] == 4'b1111)
+			begin
+				
+			end
+			// 距离为2冲突的情况
+			else
+			begin
+				if(type[3:2] == 2'b10) SrcAE <= ReadDataW;
+				if(type[1:0] == 2'b10) SrcBE <= ReadDataW;
+			end
+		end
+	endcase
+end
+
+/*
 always @ (type or ALUOutM or ALUOutW or ReadDataW or ReadSrcAE or ReadSrcBE)
 //always @ (posedge Clk)
 begin
@@ -114,5 +246,6 @@ begin
 	endcase
 
 end
+*/
 
 endmodule

@@ -92,8 +92,8 @@ reg [4:0] WriteRegW;
 
 // direct:lyx
 // direct type
-wire [3:0] ConflictTypeD;
-reg [3:0] ConflictTypeE;
+wire [5:0] ConflictTypeD;
+reg [5:0] ConflictTypeE;
 
 	Direct Direct(
 	.Rst(Rst),
@@ -197,7 +197,7 @@ begin
 	
 end
 // 判断是否是需要暂停的冲突类型
-assign PCPlus4F = (ConflictTypeD == 4'h3 | ConflictTypeD == 4'h4) ? PCF : PCF + 4;
+assign PCPlus4F = (ConflictTypeD == 6'b111111) ? PCF : PCF + 4;
 
 //Pipeline Stage 2:Decode
 always @(posedge Clk)
@@ -210,7 +210,7 @@ end
 always @ (posedge Clk)
 begin
 	// 若发现为需要暂停指令，则给执行周期全空以暂停
-	if(ConflictTypeD == 4'h3 | ConflictTypeD == 4'h4)
+	if(ConflictTypeD == 6'b111111)
 	begin
 		RegWriteE   <= 0;
 		MemToRegE   <= 0;

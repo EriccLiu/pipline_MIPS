@@ -15,7 +15,6 @@ Checking Constraint Associations...
 Done...
 
 Checking expanded design ...
-WARNING:NgdBuild:452 - logical net 'Direct/first_type<3>' has no driver
 
 Partition Implementation Status
 -------------------------------
@@ -26,9 +25,9 @@ Partition Implementation Status
 
 NGDBUILD Design Results Summary:
   Number of errors:     0
-  Number of warnings:   1
+  Number of warnings:   0
 
-Total memory usage is 4434620 kilobytes
+Total memory usage is 4418424 kilobytes
 
 Writing NGD file "Top.ngd" ...
 Total REAL time to NGDBUILD completion:  4 sec

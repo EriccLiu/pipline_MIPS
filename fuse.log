@@ -4,7 +4,6 @@ Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
 Analyzing Verilog file "N:/Xilinx_ISE/workspace/Lab05/two_dist.v" into library work
-Analyzing Verilog file "N:/Xilinx_ISE/workspace/Lab05/three_dist.v" into library work
 Analyzing Verilog file "N:/Xilinx_ISE/workspace/Lab05/one_dist.v" into library work
 Analyzing Verilog file "N:/Xilinx_ISE/workspace/Lab05/signext.v" into library work
 Analyzing Verilog file "N:/Xilinx_ISE/workspace/Lab05/register.v" into library work
@@ -22,7 +21,6 @@ WARNING:HDLCompiler:1016 - "N:/Xilinx_ISE/workspace/Lab05/Top_tb.v" Line 36: Por
 Completed static elaboration
 Compiling module one_dist
 Compiling module two_dist
-Compiling module three_dist
 Compiling module Direct
 Compiling module Data_selector
 Compiling module Ctr
@@ -35,9 +33,9 @@ Compiling module Top
 Compiling module Top_tb
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Waiting for 7 sub-compilation(s) to finish...
+Waiting for 6 sub-compilation(s) to finish...
 WARNING:Simulator - Unable to copy libPortabilityNOSH.dll to the simulation executable directory: boost::filesystem::copy_file: 系统找不到指定的路径。, "isim\Top_tb_isim_beh.exe.sim\libPortability.dll".
-Compiled 14 Verilog Units
+Compiled 13 Verilog Units
 Built simulation executable N:/Xilinx_ISE/workspace/Lab05/Top_tb_isim_beh.exe
-Fuse Memory Usage: 27516 KB
-Fuse CPU Usage: 905 ms
+Fuse Memory Usage: 27420 KB
+Fuse CPU Usage: 718 ms

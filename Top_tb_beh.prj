@@ -1,5 +1,4 @@
 verilog work "two_dist.v"
-verilog work "three_dist.v"
 verilog work "one_dist.v"
 verilog work "signext.v"
 verilog work "register.v"

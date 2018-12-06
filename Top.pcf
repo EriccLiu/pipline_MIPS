@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Thu Dec 06 11:05:36 2018
+// Written by: Map P.20131013 on Thu Dec 06 17:19:40 2018
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -26,13 +26,13 @@ PIN Data_memory/Mram_DataMem1_pins<10> = BEL "Data_memory/Mram_DataMem1"
 PIN Data_memory/Mram_DataMem2_pins<10> = BEL "Data_memory/Mram_DataMem2"
         PINNAME CLKA;
 PIN Imem/Mram_InstMem_pins<9> = BEL "Imem/Mram_InstMem" PINNAME CLKA;
-PIN register/Mram_regFile1_pins<16> = BEL "register/Mram_regFile1" PINNAME
-        CLKAWRCLK;
-PIN register/Mram_regFile1_pins<17> = BEL "register/Mram_regFile1" PINNAME
-        CLKBRDCLK;
 PIN register/Mram_regFile_pins<16> = BEL "register/Mram_regFile" PINNAME
         CLKAWRCLK;
 PIN register/Mram_regFile_pins<17> = BEL "register/Mram_regFile" PINNAME
+        CLKBRDCLK;
+PIN register/Mram_regFile1_pins<16> = BEL "register/Mram_regFile1" PINNAME
+        CLKAWRCLK;
+PIN register/Mram_regFile1_pins<17> = BEL "register/Mram_regFile1" PINNAME
         CLKBRDCLK;
 TIMEGRP sys_clk = BEL "PCPlus4D_2" BEL "PCPlus4D_3" BEL "PCPlus4D_4" BEL
         "PCPlus4D_5" BEL "PCPlus4D_6" BEL "PCPlus4D_7" BEL "PCPlus4D_8" BEL
@@ -59,27 +59,28 @@ TIMEGRP sys_clk = BEL "PCPlus4D_2" BEL "PCPlus4D_3" BEL "PCPlus4D_4" BEL
         "PCF_24" BEL "PCF_25" BEL "PCF_26" BEL "PCF_27" BEL "PCF_28" BEL
         "PCF_29" BEL "PCF_30" BEL "PCF_31" BEL "ConflictTypeE_0" BEL
         "ConflictTypeE_1" BEL "ConflictTypeE_2" BEL "ConflictTypeE_3" BEL
-        "MemWriteM" BEL "BranchM" BEL "WriteRegM_0" BEL "WriteRegM_1" BEL
-        "WriteRegM_2" BEL "WriteRegM_3" BEL "WriteRegM_4" BEL "ALUOutM_0" BEL
-        "ALUOutM_1" BEL "ALUOutM_2" BEL "ALUOutM_3" BEL "ALUOutM_4" BEL
-        "ALUOutM_5" BEL "ALUOutM_6" BEL "ALUOutM_7" BEL "ALUOutM_8" BEL
-        "ALUOutM_9" BEL "ALUOutM_10" BEL "ALUOutM_11" BEL "ALUOutM_12" BEL
-        "ALUOutM_13" BEL "ALUOutM_14" BEL "ALUOutM_15" BEL "ALUOutM_16" BEL
-        "ALUOutM_17" BEL "ALUOutM_18" BEL "ALUOutM_19" BEL "ALUOutM_20" BEL
-        "ALUOutM_21" BEL "ALUOutM_22" BEL "ALUOutM_23" BEL "ALUOutM_24" BEL
-        "ALUOutM_25" BEL "ALUOutM_26" BEL "ALUOutM_27" BEL "ALUOutM_28" BEL
-        "ALUOutM_29" BEL "ALUOutM_30" BEL "ALUOutM_31" BEL "ZeroM" BEL
-        "WriteRegW_0" BEL "WriteRegW_1" BEL "WriteRegW_2" BEL "WriteRegW_3"
-        BEL "WriteRegW_4" BEL "ALUOutW_0" BEL "ALUOutW_1" BEL "ALUOutW_2" BEL
-        "ALUOutW_3" BEL "ALUOutW_4" BEL "ALUOutW_5" BEL "ALUOutW_6" BEL
-        "ALUOutW_7" BEL "ALUOutW_8" BEL "ALUOutW_9" BEL "ALUOutW_10" BEL
-        "ALUOutW_11" BEL "ALUOutW_12" BEL "ALUOutW_13" BEL "ALUOutW_14" BEL
-        "ALUOutW_15" BEL "ALUOutW_16" BEL "ALUOutW_17" BEL "ALUOutW_18" BEL
-        "ALUOutW_19" BEL "ALUOutW_20" BEL "ALUOutW_21" BEL "ALUOutW_22" BEL
-        "ALUOutW_23" BEL "ALUOutW_24" BEL "ALUOutW_25" BEL "ALUOutW_26" BEL
-        "ALUOutW_27" BEL "ALUOutW_28" BEL "ALUOutW_29" BEL "ALUOutW_30" BEL
-        "ALUOutW_31" BEL "WriteDataM_0" BEL "WriteDataM_1" BEL "WriteDataM_2"
-        BEL "WriteDataM_3" BEL "WriteDataM_4" BEL "WriteDataM_5" BEL
+        "ConflictTypeE_4" BEL "ConflictTypeE_5" BEL "MemWriteM" BEL "BranchM"
+        BEL "WriteRegM_0" BEL "WriteRegM_1" BEL "WriteRegM_2" BEL
+        "WriteRegM_3" BEL "WriteRegM_4" BEL "ALUOutM_0" BEL "ALUOutM_1" BEL
+        "ALUOutM_2" BEL "ALUOutM_3" BEL "ALUOutM_4" BEL "ALUOutM_5" BEL
+        "ALUOutM_6" BEL "ALUOutM_7" BEL "ALUOutM_8" BEL "ALUOutM_9" BEL
+        "ALUOutM_10" BEL "ALUOutM_11" BEL "ALUOutM_12" BEL "ALUOutM_13" BEL
+        "ALUOutM_14" BEL "ALUOutM_15" BEL "ALUOutM_16" BEL "ALUOutM_17" BEL
+        "ALUOutM_18" BEL "ALUOutM_19" BEL "ALUOutM_20" BEL "ALUOutM_21" BEL
+        "ALUOutM_22" BEL "ALUOutM_23" BEL "ALUOutM_24" BEL "ALUOutM_25" BEL
+        "ALUOutM_26" BEL "ALUOutM_27" BEL "ALUOutM_28" BEL "ALUOutM_29" BEL
+        "ALUOutM_30" BEL "ALUOutM_31" BEL "ZeroM" BEL "WriteRegW_0" BEL
+        "WriteRegW_1" BEL "WriteRegW_2" BEL "WriteRegW_3" BEL "WriteRegW_4"
+        BEL "ALUOutW_0" BEL "ALUOutW_1" BEL "ALUOutW_2" BEL "ALUOutW_3" BEL
+        "ALUOutW_4" BEL "ALUOutW_5" BEL "ALUOutW_6" BEL "ALUOutW_7" BEL
+        "ALUOutW_8" BEL "ALUOutW_9" BEL "ALUOutW_10" BEL "ALUOutW_11" BEL
+        "ALUOutW_12" BEL "ALUOutW_13" BEL "ALUOutW_14" BEL "ALUOutW_15" BEL
+        "ALUOutW_16" BEL "ALUOutW_17" BEL "ALUOutW_18" BEL "ALUOutW_19" BEL
+        "ALUOutW_20" BEL "ALUOutW_21" BEL "ALUOutW_22" BEL "ALUOutW_23" BEL
+        "ALUOutW_24" BEL "ALUOutW_25" BEL "ALUOutW_26" BEL "ALUOutW_27" BEL
+        "ALUOutW_28" BEL "ALUOutW_29" BEL "ALUOutW_30" BEL "ALUOutW_31" BEL
+        "WriteDataM_0" BEL "WriteDataM_1" BEL "WriteDataM_2" BEL
+        "WriteDataM_3" BEL "WriteDataM_4" BEL "WriteDataM_5" BEL
         "WriteDataM_6" BEL "WriteDataM_7" BEL "WriteDataM_8" BEL
         "WriteDataM_9" BEL "WriteDataM_10" BEL "WriteDataM_11" BEL
         "WriteDataM_12" BEL "WriteDataM_13" BEL "WriteDataM_14" BEL
@@ -104,19 +105,11 @@ TIMEGRP sys_clk = BEL "PCPlus4D_2" BEL "PCPlus4D_3" BEL "PCPlus4D_4" BEL
         "Direct/InstructionM_20" BEL "Direct/InstructionM_26" BEL
         "Direct/InstructionM_27" BEL "Direct/InstructionM_28" BEL
         "Direct/InstructionM_29" BEL "Direct/InstructionM_30" BEL
-        "Direct/InstructionM_31" BEL "Direct/InstructionW_11" BEL
-        "Direct/InstructionW_12" BEL "Direct/InstructionW_13" BEL
-        "Direct/InstructionW_14" BEL "Direct/InstructionW_15" BEL
-        "Direct/InstructionW_16" BEL "Direct/InstructionW_17" BEL
-        "Direct/InstructionW_18" BEL "Direct/InstructionW_19" BEL
-        "Direct/InstructionW_20" BEL "Direct/InstructionW_26" BEL
-        "Direct/InstructionW_27" BEL "Direct/InstructionW_28" BEL
-        "Direct/InstructionW_29" BEL "Direct/InstructionW_30" BEL
-        "Direct/InstructionW_31" PIN "Data_memory/Mram_DataMem1_pins<10>" PIN
+        "Direct/InstructionM_31" PIN "Data_memory/Mram_DataMem1_pins<10>" PIN
         "Data_memory/Mram_DataMem2_pins<10>" PIN "Imem/Mram_InstMem_pins<9>"
-        PIN "register/Mram_regFile1_pins<16>" PIN
-        "register/Mram_regFile1_pins<17>" PIN "register/Mram_regFile_pins<16>"
-        PIN "register/Mram_regFile_pins<17>" BEL "SignExtOutE_0" BEL
+        PIN "register/Mram_regFile_pins<16>" PIN
+        "register/Mram_regFile_pins<17>" PIN "register/Mram_regFile1_pins<16>"
+        PIN "register/Mram_regFile1_pins<17>" BEL "SignExtOutE_0" BEL
         "SignExtOutE_1" BEL "SignExtOutE_2" BEL "SignExtOutE_3" BEL
         "SignExtOutE_4" BEL "SignExtOutE_5" BEL "SignExtOutE_6" BEL
         "SignExtOutE_7" BEL "SignExtOutE_8" BEL "SignExtOutE_9" BEL
