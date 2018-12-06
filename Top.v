@@ -48,10 +48,8 @@ wire [31:0] InstructionD;
 reg [31:0] PCPlus4D;
 
 //Execute internal signal
-// direct:lyx
 wire [31:0] ReadSrcAE;
 wire [31:0] ReadSrcBE;
-// end direct
 wire [31:0] SrcAE;
 wire [31:0] SrcBE;
 wire [31:0] WriteDataE;
@@ -90,8 +88,6 @@ reg MemToRegW;
 reg [31:0] ALUOutW;
 reg [4:0] WriteRegW;
 
-// direct:lyx
-// direct type
 wire [5:0] ConflictTypeD;
 reg [5:0] ConflictTypeE;
 
@@ -115,8 +111,6 @@ reg [5:0] ConflictTypeE;
    .SrcBE(SrcBE)
 	);
 
-// end direct	
-
 	Ctr Ctr (
 	.OpCode(InstructionD[31:26]), 
 	.Funct(InstructionD[5:0]),
@@ -136,15 +130,7 @@ reg [5:0] ConflictTypeE;
    .DmemWrite(MemWriteM),
    .DmemWrData(WriteDataM)
 	);
-	/*
-	DmemB Dmem(
-    .clka(Clk),
-    .addra(ALUOutM[9:0]),
-    .douta(ReadDataW),			// 读出的数据
-    .wea(MemWriteM),
-    .dina(WriteDataM)			// 写入的数据
-	);
-	*/
+
 //assign wea[0] = MemWriteM;
 	Instruction_memory Imem(
 	.Clk(Clk),
@@ -161,10 +147,7 @@ reg [5:0] ConflictTypeE;
 	.RegWrAddr(WriteRegW), 
 	.RegWrData(ResultW), 
 	.RegWrite(RegWriteW),
-	// direct:lyx
-	//.RegARdData(SrcAE),
 	.RegARdData(ReadSrcAE),
-	// end direct
 	.RegBRdData(WriteDataE)
 	);
 
@@ -242,11 +225,7 @@ begin
 	end	
 
 end
-
-// direct:lyx	
-//assign SrcBE = (ALUSrcE ==1'b0)? WriteDataE:SignExtOutE;
 assign ReadSrcBE = (ALUSrcE ==1'b0)? WriteDataE:SignExtOutE;
-// end direct
 assign WriteRegE = (RegDstE==1'b0) ? RtE : RdE;
 
 //Pipline Stage 4: Memory

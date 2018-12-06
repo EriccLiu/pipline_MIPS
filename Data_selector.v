@@ -164,7 +164,7 @@ begin
 				if(type[3:2] == 2'b00) SrcAE <= ReadSrcAE;
 				// 距离为1冲突，暂停不做操作
 				// 距离为2冲突
-				else if(type[3:2] == 2'b10) SrcAE <= ALUOutW;
+				else if(type[3:2] == 2'b10) SrcAE <= ReadDataW;
 				
 				// 第二个操作数赋值
 				// 无冲突

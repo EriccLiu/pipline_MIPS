@@ -22,50 +22,28 @@ module Direct(
 	 input Rst,
 	 input Clk,
     input [31:0] Instruction,
-	 //output reg [3:0] type
     output reg [5:0] type
 	 );
 
 reg [31:0] InstructionD;
 reg [31:0] InstructionE;
 reg [31:0] InstructionM;
-reg [31:0] InstructionW;
 
 wire [5:0] first_type;
 wire [5:0] second_type;
 
-/*
-wire one_dist_conf;
-wire two_dist_conf;
-wire [3:0] first_type;
-wire [3:0] second_type;
-wire [3:0] third_type;
-*/
 	one_dist one_dist(
 	.InstructionD(InstructionD),
 	.InstructionE(InstructionE),
-	//.conf(one_dist_conf),
 	.outtype(first_type)
 	);
 	
 	two_dist two_dist(
 	.InstructionD(InstructionD),
 	.InstructionM(InstructionM),
-	//.inconf(one_dist_conf),
 	.intype(first_type),
-	//.conf(two_dist_conf),
 	.outtype(second_type)
 	);
-	
-	/*
-	three_dist three_dist(
-	.InstructionD(InstructionD),
-	.InstructionW(InstructionW),
-	.inconf(two_dist_conf),
-	.intype(second_type),
-	.outtype(third_type)
-	);
-	*/
 
 /*
 若需要定向，则在Data_selector模块中选择数据源
@@ -113,21 +91,6 @@ begin
 	else
 		InstructionM <= InstructionE;
 end
-// 回写阶段指令由执行阶段指令提供
-always @ (posedge Clk or posedge Rst)
-begin
-	if(Rst == 1'b1)
-		InstructionW <= 32'hffffffff;
-	else
-		InstructionW <= InstructionM;
-end
-
-/*
-always @ (third_type)
-begin
-	type <= third_type;
-end
-*/
 
 always @ (second_type)
 begin

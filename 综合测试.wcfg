@@ -10,7 +10,7 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="22" />
+   <WVObjectSize size="24" />
    <wvobject fp_name="/Top_tb/Clk" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">Clk</obj_property>
       <obj_property name="ObjectShortName">Clk</obj_property>
@@ -23,6 +23,14 @@
       <obj_property name="ElementShortName">PCF[31:0]</obj_property>
       <obj_property name="ObjectShortName">PCF[31:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Top_tb/uut/ConflictTypeD" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ConflictTypeD[5:0]</obj_property>
+      <obj_property name="ObjectShortName">ConflictTypeD[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Top_tb/uut/ConflictTypeE" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ConflictTypeE[5:0]</obj_property>
+      <obj_property name="ObjectShortName">ConflictTypeE[5:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/Top_tb/uut/InstructionD" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">InstructionD[31:0]</obj_property>
@@ -44,76 +52,83 @@
       <obj_property name="ObjectShortName">InstructionM[31:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/Top_tb/uut/Direct/InstructionW" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">InstructionW[31:0]</obj_property>
-      <obj_property name="ObjectShortName">InstructionW[31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Top_tb/uut/ConflictTypeD" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">ConflictTypeD[5:0]</obj_property>
-      <obj_property name="ObjectShortName">ConflictTypeD[5:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Top_tb/uut/ConflictTypeE" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">ConflictTypeE[5:0]</obj_property>
-      <obj_property name="ObjectShortName">ConflictTypeE[5:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Top_tb/uut/register/regFile[0]" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">[0,31:0]</obj_property>
-      <obj_property name="ObjectShortName">regFile[0,31:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Top_tb/uut/register/regFile[1]" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">[1,31:0]</obj_property>
-      <obj_property name="ObjectShortName">regFile[1,31:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Top_tb/uut/register/regFile[2]" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">[2,31:0]</obj_property>
-      <obj_property name="ObjectShortName">regFile[2,31:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Top_tb/uut/register/regFile[3]" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">[3,31:0]</obj_property>
-      <obj_property name="ObjectShortName">regFile[3,31:0]</obj_property>
+   <wvobject fp_name="/Top_tb/uut/register/regFile[10]" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">[10,31:0]</obj_property>
+      <obj_property name="ObjectShortName">regFile[10,31:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/Top_tb/uut/register/regFile[5]" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">[5,31:0]</obj_property>
-      <obj_property name="ObjectShortName">regFile[5,31:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   <wvobject fp_name="/Top_tb/uut/register/regFile[11]" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">[11,31:0]</obj_property>
+      <obj_property name="ObjectShortName">regFile[11,31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/Top_tb/uut/register/regFile[6]" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">[6,31:0]</obj_property>
-      <obj_property name="ObjectShortName">regFile[6,31:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   <wvobject fp_name="/Top_tb/uut/register/regFile[12]" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">[12,31:0]</obj_property>
+      <obj_property name="ObjectShortName">regFile[12,31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/Top_tb/uut/register/regFile[7]" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">[7,31:0]</obj_property>
-      <obj_property name="ObjectShortName">regFile[7,31:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   <wvobject fp_name="/Top_tb/uut/register/regFile[13]" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">[13,31:0]</obj_property>
+      <obj_property name="ObjectShortName">regFile[13,31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/Top_tb/uut/register/regFile[8]" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">[8,31:0]</obj_property>
-      <obj_property name="ObjectShortName">regFile[8,31:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   <wvobject fp_name="/Top_tb/uut/register/regFile[14]" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">[14,31:0]</obj_property>
+      <obj_property name="ObjectShortName">regFile[14,31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/Top_tb/uut/register/regFile[9]" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">[9,31:0]</obj_property>
-      <obj_property name="ObjectShortName">regFile[9,31:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   <wvobject fp_name="/Top_tb/uut/register/regFile[15]" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">[15,31:0]</obj_property>
+      <obj_property name="ObjectShortName">regFile[15,31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/Top_tb/uut/Direct/one_dist/InstructionD" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">InstructionD[31:0]</obj_property>
-      <obj_property name="ObjectShortName">InstructionD[31:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
+   <wvobject fp_name="/Top_tb/uut/register/regFile[16]" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">[16,31:0]</obj_property>
+      <obj_property name="ObjectShortName">regFile[16,31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/Top_tb/uut/Direct/one_dist/InstructionE" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">InstructionE[31:0]</obj_property>
-      <obj_property name="ObjectShortName">InstructionE[31:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
+   <wvobject fp_name="/Top_tb/uut/register/regFile[17]" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">[17,31:0]</obj_property>
+      <obj_property name="ObjectShortName">regFile[17,31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/Top_tb/uut/Direct/one_dist/outtype" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">outtype[5:0]</obj_property>
-      <obj_property name="ObjectShortName">outtype[5:0]</obj_property>
+   <wvobject fp_name="/Top_tb/uut/register/regFile[18]" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">[18,31:0]</obj_property>
+      <obj_property name="ObjectShortName">regFile[18,31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Top_tb/uut/register/regFile[19]" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">[19,31:0]</obj_property>
+      <obj_property name="ObjectShortName">regFile[19,31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Top_tb/uut/register/regFile[20]" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">[20,31:0]</obj_property>
+      <obj_property name="ObjectShortName">regFile[20,31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Top_tb/uut/ALU/SrcA" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">SrcA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">SrcA[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#00ffff</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Top_tb/uut/ALU/SrcB" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">SrcB[31:0]</obj_property>
+      <obj_property name="ObjectShortName">SrcB[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="CustomSignalColor">#00ffff</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Top_tb/uut/ALUOutM" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ALUOutM[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ALUOutM[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Top_tb/uut/ALUOutW" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ALUOutW[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ALUOutW[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>

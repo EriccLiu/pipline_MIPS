@@ -9,6 +9,7 @@ Time resolution is 1 ps
 Simulator is doing circuit initialization process.
 ERROR: Too many words specified in datafile data
 ERROR: Too many words specified in datafile Instruction
+ERROR: Too many words specified in datafile register
 Finished circuit initialization process.
 ISim P.20131013 (signature 0x7708f090)
 This is a Full version of ISim.
@@ -16,6 +17,7 @@ This is a Full version of ISim.
 Simulator is doing circuit initialization process.
 ERROR: Too many words specified in datafile data
 ERROR: Too many words specified in datafile Instruction
+ERROR: Too many words specified in datafile register
 Finished circuit initialization process.
 ISim P.20131013 (signature 0x7708f090)
 This is a Full version of ISim.
@@ -23,25 +25,24 @@ This is a Full version of ISim.
 Simulator is doing circuit initialization process.
 ERROR: Too many words specified in datafile data
 ERROR: Too many words specified in datafile Instruction
+ERROR: Too many words specified in datafile register
 Finished circuit initialization process.
+# run 100ns
 ISim P.20131013 (signature 0x7708f090)
 This is a Full version of ISim.
 # run 100 ns
 Simulator is doing circuit initialization process.
 ERROR: Too many words specified in datafile data
 ERROR: Too many words specified in datafile Instruction
+ERROR: Too many words specified in datafile register
 Finished circuit initialization process.
+# run 50ns
 ISim P.20131013 (signature 0x7708f090)
 This is a Full version of ISim.
 # run 100 ns
 Simulator is doing circuit initialization process.
 ERROR: Too many words specified in datafile data
 ERROR: Too many words specified in datafile Instruction
+ERROR: Too many words specified in datafile register
 Finished circuit initialization process.
-ISim P.20131013 (signature 0x7708f090)
-This is a Full version of ISim.
-# run 100 ns
-Simulator is doing circuit initialization process.
-ERROR: Too many words specified in datafile data
-ERROR: Too many words specified in datafile Instruction
-Finished circuit initialization process.
+# run 50ns

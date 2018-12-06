@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.27 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.20 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.27 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.20 secs
  
 --> Reading design: Top.prj
 
@@ -99,9 +99,6 @@ DSP48 Utilization Ratio            : 100
 Auto BRAM Packing                  : NO
 Slice Utilization Ratio Delta      : 5
 
----- Other Options
-Cores Search Directories           : {"ipcore_dir"  }
-
 =========================================================================
 
 
@@ -142,7 +139,6 @@ Elaborating module <Direct>.
 Elaborating module <one_dist>.
 
 Elaborating module <two_dist>.
-WARNING:HDLCompiler:1127 - "N:\Xilinx_ISE\workspace\Lab05\Direct.v" Line 117: Assignment to InstructionW ignored, since the identifier is never used
 
 Elaborating module <Data_selector>.
 WARNING:HDLCompiler:1127 - "N:\Xilinx_ISE\workspace\Lab05\Data_selector.v" Line 37: Assignment to LastResultW ignored, since the identifier is never used
@@ -196,8 +192,8 @@ WARNING:Xst:647 - Input <Switch> is never used. This port will be preserved and 
     Found 5-bit register for signal <WriteRegW>.
     Found 1-bit register for signal <RegWriteW>.
     Found 1-bit register for signal <MemToRegW>.
-    Found 32-bit adder for signal <PCF[31]_GND_1_o_add_5_OUT> created at line 200.
-    Found 32-bit adder for signal <PCPlus4E[31]_SignExtOutE[29]_add_27_OUT> created at line 263.
+    Found 32-bit adder for signal <PCF[31]_GND_1_o_add_5_OUT> created at line 183.
+    Found 32-bit adder for signal <PCPlus4E[31]_SignExtOutE[29]_add_27_OUT> created at line 242.
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred 299 D-type flip-flop(s).
@@ -218,10 +214,10 @@ Synthesizing Unit <one_dist>.
 WARNING:Xst:647 - Input <InstructionD<15:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <InstructionE<10:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <InstructionE<25:21>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 5-bit comparator equal for signal <InstructionD[25]_InstructionE[15]_equal_1_o> created at line 46
-    Found 5-bit comparator equal for signal <InstructionD[20]_InstructionE[15]_equal_3_o> created at line 52
-    Found 5-bit comparator equal for signal <InstructionD[25]_InstructionE[20]_equal_4_o> created at line 65
-    Found 5-bit comparator equal for signal <InstructionD[20]_InstructionE[20]_equal_6_o> created at line 70
+    Found 5-bit comparator equal for signal <InstructionD[25]_InstructionE[15]_equal_1_o> created at line 45
+    Found 5-bit comparator equal for signal <InstructionD[20]_InstructionE[15]_equal_3_o> created at line 51
+    Found 5-bit comparator equal for signal <InstructionD[25]_InstructionE[20]_equal_4_o> created at line 64
+    Found 5-bit comparator equal for signal <InstructionD[20]_InstructionE[20]_equal_6_o> created at line 69
     Summary:
 	inferred   4 Comparator(s).
 	inferred   4 Multiplexer(s).
@@ -232,10 +228,10 @@ Synthesizing Unit <two_dist>.
 WARNING:Xst:647 - Input <InstructionD<15:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <InstructionM<10:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <InstructionM<25:21>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 5-bit comparator equal for signal <InstructionD[25]_InstructionM[15]_equal_1_o> created at line 48
-    Found 5-bit comparator equal for signal <InstructionD[20]_InstructionM[15]_equal_3_o> created at line 54
-    Found 5-bit comparator equal for signal <InstructionD[25]_InstructionM[20]_equal_5_o> created at line 67
-    Found 5-bit comparator equal for signal <InstructionD[20]_InstructionM[20]_equal_7_o> created at line 73
+    Found 5-bit comparator equal for signal <InstructionD[25]_InstructionM[15]_equal_1_o> created at line 46
+    Found 5-bit comparator equal for signal <InstructionD[20]_InstructionM[15]_equal_3_o> created at line 52
+    Found 5-bit comparator equal for signal <InstructionD[25]_InstructionM[20]_equal_5_o> created at line 65
+    Found 5-bit comparator equal for signal <InstructionD[20]_InstructionM[20]_equal_7_o> created at line 71
     Summary:
 	inferred   4 Comparator(s).
 	inferred  22 Multiplexer(s).
@@ -247,9 +243,10 @@ WARNING:Xst:647 - Input <ResultW> is never used. This port will be preserved and
 WARNING:Xst:647 - Input <Clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 32-bit 4-to-1 multiplexer for signal <SrcAE> created at line 78.
     Found 32-bit 4-to-1 multiplexer for signal <SrcBE> created at line 78.
+    Found 32-bit 4-to-1 multiplexer for signal <ReadSrcAE[31]_ALUOutM[31]_mux_25_OUT> created at line 134.
     Found 32-bit 4-to-1 multiplexer for signal <ReadSrcBE[31]_ReadSrcBE[31]_mux_43_OUT> created at line 161.
     Summary:
-	inferred  13 Multiplexer(s).
+	inferred  12 Multiplexer(s).
 Unit <Data_selector> synthesized.
 
 Synthesizing Unit <Ctr>.
@@ -328,10 +325,10 @@ Macro Statistics
 # Comparators                                          : 9
  32-bit comparator greater                             : 1
  5-bit comparator equal                                : 8
-# Multiplexers                                         : 47
+# Multiplexers                                         : 46
  1-bit 2-to-1 multiplexer                              : 25
- 32-bit 2-to-1 multiplexer                             : 16
- 32-bit 4-to-1 multiplexer                             : 3
+ 32-bit 2-to-1 multiplexer                             : 14
+ 32-bit 4-to-1 multiplexer                             : 4
  5-bit 2-to-1 multiplexer                              : 1
  6-bit 2-to-1 multiplexer                              : 1
  8-bit 2-to-1 multiplexer                              : 1
@@ -484,10 +481,10 @@ Macro Statistics
 # Comparators                                          : 9
  32-bit comparator greater                             : 1
  5-bit comparator equal                                : 8
-# Multiplexers                                         : 109
+# Multiplexers                                         : 108
  1-bit 2-to-1 multiplexer                              : 89
- 32-bit 2-to-1 multiplexer                             : 14
- 32-bit 4-to-1 multiplexer                             : 3
+ 32-bit 2-to-1 multiplexer                             : 12
+ 32-bit 4-to-1 multiplexer                             : 4
  5-bit 2-to-1 multiplexer                              : 1
  6-bit 2-to-1 multiplexer                              : 1
  8-bit 2-to-1 multiplexer                              : 1
@@ -602,18 +599,18 @@ Top Level Output File Name         : Top.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 993
+# BELS                             : 970
 #      GND                         : 5
 #      INV                         : 2
 #      LUT1                        : 29
-#      LUT2                        : 196
-#      LUT3                        : 156
-#      LUT4                        : 44
-#      LUT5                        : 55
-#      LUT6                        : 233
+#      LUT2                        : 194
+#      LUT3                        : 222
+#      LUT4                        : 39
+#      LUT5                        : 23
+#      LUT6                        : 188
 #      MUXCY                       : 138
-#      MUXF7                       : 5
-#      VCC                         : 6
+#      MUXF7                       : 1
+#      VCC                         : 5
 #      XORCY                       : 124
 # FlipFlops/Latches                : 320
 #      FD                          : 256
@@ -639,16 +636,16 @@ Selected Device : 6slx16csg324-3
 
 Slice Logic Utilization: 
  Number of Slice Registers:             320  out of  18224     1%  
- Number of Slice LUTs:                  717  out of   9112     7%  
-    Number used as Logic:               715  out of   9112     7%  
+ Number of Slice LUTs:                  699  out of   9112     7%  
+    Number used as Logic:               697  out of   9112     7%  
     Number used as Memory:                2  out of   2176     0%  
        Number used as SRL:                2
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    795
-   Number with an unused Flip Flop:     475  out of    795    59%  
-   Number with an unused LUT:            78  out of    795     9%  
-   Number of fully used LUT-FF pairs:   242  out of    795    30%  
+ Number of LUT Flip Flop pairs used:    777
+   Number with an unused Flip Flop:     457  out of    777    58%  
+   Number with an unused LUT:            78  out of    777    10%  
+   Number of fully used LUT-FF pairs:   242  out of    777    31%  
    Number of unique control sets:         4
 
 IO Utilization: 
@@ -692,8 +689,8 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 11.532ns (Maximum Frequency: 86.718MHz)
-   Minimum input arrival time before clock: 12.071ns
+   Minimum period: 11.770ns (Maximum Frequency: 84.962MHz)
+   Minimum input arrival time before clock: 12.357ns
    Maximum output required time after clock: 3.926ns
    Maximum combinational path delay: No path found
 
@@ -703,10 +700,10 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'Clk'
-  Clock period: 11.532ns (frequency: 86.718MHz)
-  Total number of paths / destination ports: 685543 / 484
+  Clock period: 11.770ns (frequency: 84.962MHz)
+  Total number of paths / destination ports: 558647 / 484
 -------------------------------------------------------------------------
-Delay:               11.532ns (Levels of Logic = 14)
+Delay:               11.770ns (Levels of Logic = 13)
   Source:            Imem/Mram_InstMem (RAM)
   Destination:       PCPlus4D_2 (FF)
   Source Clock:      Clk rising
@@ -719,31 +716,30 @@ Delay:               11.532ns (Levels of Logic = 14)
      RAMB16BWER:CLKA->DOA26    8   1.850   0.803  Mram_InstMem (Instruction<26>)
      end scope: 'Imem:Instruction<26>'
      begin scope: 'Direct:Instruction<26>'
-     LUT2:I1->O            9   0.205   1.194  Mmux_InstructionD191 (InstructionD<26>)
+     LUT2:I1->O            7   0.205   1.118  Mmux_InstructionD191 (InstructionD<26>)
      begin scope: 'Direct/one_dist:InstructionD<26>'
-     LUT6:I0->O            7   0.203   0.774  InstructionD[31]_GND_3_o_equal_20_o<31>1 (InstructionD[31]_GND_3_o_equal_20_o)
+     LUT6:I1->O            8   0.203   0.803  InstructionD[31]_GND_3_o_equal_20_o<31>1 (InstructionD[31]_GND_3_o_equal_20_o)
      LUT6:I5->O            1   0.205   0.580  outtype<4>2_SW0 (N6)
-     LUT6:I5->O           10   0.205   0.857  outtype<4>2 (outtype<2>)
+     LUT6:I5->O           22   0.205   1.134  outtype<4>2 (outtype<2>)
      end scope: 'Direct/one_dist:outtype<2>'
      begin scope: 'Direct/two_dist:intype<2>'
-     LUT6:I5->O            2   0.205   0.617  InstructionD[20]_intype[3]_AND_10_o (InstructionD[20]_intype[3]_AND_10_o)
-     LUT6:I5->O            1   0.205   0.000  outtype<4>_SW0_SW0_F (N43)
-     MUXF7:I0->O           1   0.131   0.684  outtype<4>_SW0_SW0 (N16)
-     LUT6:I4->O           18   0.203   1.050  outtype<4> (outtype<1>)
+     LUT4:I3->O            2   0.205   0.721  outtype<2>2_SW0 (N8)
+     LUT6:I4->O            2   0.203   0.617  outtype<2>2 (outtype<2>2)
+     LUT6:I5->O           18   0.205   1.154  outtype<4> (outtype<1>)
      end scope: 'Direct/two_dist:outtype<1>'
      end scope: 'Direct:type<1>'
-     LUT6:I5->O           18   0.205   1.050  ConflictTypeD[5]_PWR_1_o_equal_11_o<5>1 (ConflictTypeD[5]_PWR_1_o_equal_11_o)
+     LUT6:I4->O           18   0.203   1.050  ConflictTypeD[5]_PWR_1_o_equal_11_o<5>1 (ConflictTypeD[5]_PWR_1_o_equal_11_o)
      LUT2:I1->O            1   0.205   0.000  SignExtOutE_0_rstpot (SignExtOutE_0_rstpot)
      FD:D                      0.102          SignExtOutE_0
     ----------------------------------------
-    Total                     11.532ns (3.924ns logic, 7.608ns route)
-                                       (34.0% logic, 66.0% route)
+    Total                     11.770ns (3.791ns logic, 7.979ns route)
+                                       (32.2% logic, 67.8% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'Clk'
-  Total number of paths / destination ports: 273813 / 234
+  Total number of paths / destination ports: 254889 / 234
 -------------------------------------------------------------------------
-Offset:              12.071ns (Levels of Logic = 14)
+Offset:              12.357ns (Levels of Logic = 13)
   Source:            Rst (PAD)
   Destination:       PCPlus4D_2 (FF)
   Destination Clock: Clk rising
@@ -758,21 +754,20 @@ Offset:              12.071ns (Levels of Logic = 14)
      begin scope: 'Direct/one_dist:InstructionD<19>'
      LUT6:I3->O            5   0.205   1.079  outtype<4>12 (outtype<4>12)
      LUT6:I0->O            1   0.203   0.580  outtype<4>2_SW0 (N6)
-     LUT6:I5->O           10   0.205   0.857  outtype<4>2 (outtype<2>)
+     LUT6:I5->O           22   0.205   1.134  outtype<4>2 (outtype<2>)
      end scope: 'Direct/one_dist:outtype<2>'
      begin scope: 'Direct/two_dist:intype<2>'
-     LUT6:I5->O            2   0.205   0.617  InstructionD[20]_intype[3]_AND_10_o (InstructionD[20]_intype[3]_AND_10_o)
-     LUT6:I5->O            1   0.205   0.000  outtype<4>_SW0_SW0_F (N43)
-     MUXF7:I0->O           1   0.131   0.684  outtype<4>_SW0_SW0 (N16)
-     LUT6:I4->O           18   0.203   1.050  outtype<4> (outtype<1>)
+     LUT4:I3->O            2   0.205   0.721  outtype<2>2_SW0 (N8)
+     LUT6:I4->O            2   0.203   0.617  outtype<2>2 (outtype<2>2)
+     LUT6:I5->O           18   0.205   1.154  outtype<4> (outtype<1>)
      end scope: 'Direct/two_dist:outtype<1>'
      end scope: 'Direct:type<1>'
-     LUT6:I5->O           18   0.205   1.050  ConflictTypeD[5]_PWR_1_o_equal_11_o<5>1 (ConflictTypeD[5]_PWR_1_o_equal_11_o)
+     LUT6:I4->O           18   0.203   1.050  ConflictTypeD[5]_PWR_1_o_equal_11_o<5>1 (ConflictTypeD[5]_PWR_1_o_equal_11_o)
      LUT2:I1->O            1   0.205   0.000  SignExtOutE_0_rstpot (SignExtOutE_0_rstpot)
      FD:D                      0.102          SignExtOutE_0
     ----------------------------------------
-    Total                     12.071ns (3.294ns logic, 8.777ns route)
-                                       (27.3% logic, 72.7% route)
+    Total                     12.357ns (3.161ns logic, 9.196ns route)
+                                       (25.6% logic, 74.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'Clk'
@@ -803,20 +798,20 @@ Clock to Setup on destination clock Clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-Clk            |   11.532|         |    3.725|         |
+Clk            |   11.770|         |    3.725|         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 11.00 secs
-Total CPU time to Xst completion: 10.51 secs
+Total REAL time to Xst completion: 10.00 secs
+Total CPU time to Xst completion: 9.60 secs
  
 --> 
 
 Total memory usage is 4523196 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   87 (   0 filtered)
+Number of warnings :   86 (   0 filtered)
 Number of infos    :    4 (   0 filtered)
 
