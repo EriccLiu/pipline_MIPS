@@ -1,0 +1,887 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.14 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.14 secs
+ 
+--> Reading design: Top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Top.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Top"
+Output Format                      : NGC
+Target Device                      : xc6slx16-3-csg324
+
+---- Source Options
+Top Module Name                    : Top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : Yes
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "N:\Xilinx_ISE\workspace\Lab05\two_dist.v" into library work
+Parsing module <two_dist>.
+Analyzing Verilog file "N:\Xilinx_ISE\workspace\Lab05\three_dist.v" into library work
+Parsing module <three_dist>.
+Analyzing Verilog file "N:\Xilinx_ISE\workspace\Lab05\one_dist.v" into library work
+Parsing module <one_dist>.
+Analyzing Verilog file "N:\Xilinx_ISE\workspace\Lab05\signext.v" into library work
+Parsing module <signext>.
+Analyzing Verilog file "N:\Xilinx_ISE\workspace\Lab05\register.v" into library work
+Parsing module <register>.
+Analyzing Verilog file "N:\Xilinx_ISE\workspace\Lab05\Instruction_memory.v" into library work
+Parsing module <Instruction_memory>.
+Analyzing Verilog file "N:\Xilinx_ISE\workspace\Lab05\Direct.v" into library work
+Parsing module <Direct>.
+Analyzing Verilog file "N:\Xilinx_ISE\workspace\Lab05\Data_selector.v" into library work
+Parsing module <Data_selector>.
+Analyzing Verilog file "N:\Xilinx_ISE\workspace\Lab05\Data_memory.v" into library work
+Parsing module <Data_memory>.
+Analyzing Verilog file "N:\Xilinx_ISE\workspace\Lab05\Ctr.v" into library work
+Parsing module <Ctr>.
+Analyzing Verilog file "N:\Xilinx_ISE\workspace\Lab05\ALU.v" into library work
+Parsing module <ALU>.
+Analyzing Verilog file "N:\Xilinx_ISE\workspace\Lab05\Top.v" into library work
+Parsing module <Top>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <Top>.
+
+Elaborating module <Direct>.
+
+Elaborating module <one_dist>.
+
+Elaborating module <two_dist>.
+
+Elaborating module <three_dist>.
+
+Elaborating module <Data_selector>.
+WARNING:HDLCompiler:91 - "N:\Xilinx_ISE\workspace\Lab05\Data_selector.v" Line 134: Signal <LastResultW> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "N:\Xilinx_ISE\workspace\Lab05\Data_selector.v" Line 141: Signal <LastResultW> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "N:\Xilinx_ISE\workspace\Lab05\Data_selector.v" Line 146: Signal <LastResultW> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "N:\Xilinx_ISE\workspace\Lab05\Data_selector.v" Line 153: Signal <LastResultW> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+
+Elaborating module <Ctr>.
+
+Elaborating module <Data_memory>.
+Reading initialization file \"data\".
+
+Elaborating module <Instruction_memory>.
+Reading initialization file \"Instruction\".
+
+Elaborating module <register>.
+Reading initialization file \"register\".
+
+Elaborating module <ALU>.
+
+Elaborating module <signext>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <Top>.
+    Related source file is "N:\Xilinx_ISE\workspace\Lab05\Top.v".
+WARNING:Xst:647 - Input <Switch> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 32-bit register for signal <Test>.
+    Found 32-bit register for signal <PCPlus4D>.
+    Found 1-bit register for signal <RegWriteE>.
+    Found 1-bit register for signal <MemToRegE>.
+    Found 1-bit register for signal <MemWriteE>.
+    Found 1-bit register for signal <BranchE>.
+    Found 4-bit register for signal <ALUControlE>.
+    Found 1-bit register for signal <ALUSrcE>.
+    Found 1-bit register for signal <RegDstE>.
+    Found 32-bit register for signal <PCPlus4E>.
+    Found 32-bit register for signal <SignExtOutE>.
+    Found 5-bit register for signal <RtE>.
+    Found 5-bit register for signal <RdE>.
+    Found 4-bit register for signal <ConflictTypeE>.
+    Found 1-bit register for signal <RegWriteM>.
+    Found 1-bit register for signal <MemToRegM>.
+    Found 1-bit register for signal <MemWriteM>.
+    Found 1-bit register for signal <BranchM>.
+    Found 1-bit register for signal <ZeroM>.
+    Found 32-bit register for signal <ALUOutM>.
+    Found 32-bit register for signal <WriteDataM>.
+    Found 5-bit register for signal <WriteRegM>.
+    Found 32-bit register for signal <PCBranchM>.
+    Found 32-bit register for signal <ALUOutW>.
+    Found 5-bit register for signal <WriteRegW>.
+    Found 1-bit register for signal <RegWriteW>.
+    Found 1-bit register for signal <MemToRegW>.
+    Found 32-bit adder for signal <PCF[31]_GND_1_o_add_6_OUT> created at line 200.
+    Found 32-bit adder for signal <PCPlus4E[31]_SignExtOutE[29]_add_29_OUT> created at line 263.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred 297 D-type flip-flop(s).
+	inferred   5 Multiplexer(s).
+Unit <Top> synthesized.
+
+Synthesizing Unit <Direct>.
+    Related source file is "N:\Xilinx_ISE\workspace\Lab05\Direct.v".
+    Found 32-bit register for signal <InstructionM>.
+    Found 32-bit register for signal <InstructionW>.
+    Found 32-bit register for signal <InstructionE>.
+    Summary:
+	inferred  96 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+Unit <Direct> synthesized.
+
+Synthesizing Unit <one_dist>.
+    Related source file is "N:\Xilinx_ISE\workspace\Lab05\one_dist.v".
+WARNING:Xst:647 - Input <InstructionD<15:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <InstructionE<10:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <InstructionE<25:21>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 5-bit comparator equal for signal <InstructionD[25]_InstructionE[15]_equal_1_o> created at line 44
+    Found 5-bit comparator equal for signal <InstructionD[20]_InstructionE[15]_equal_2_o> created at line 49
+    Found 5-bit comparator equal for signal <InstructionD[25]_InstructionE[20]_equal_18_o> created at line 94
+    Found 5-bit comparator equal for signal <InstructionD[20]_InstructionE[20]_equal_19_o> created at line 99
+    Summary:
+	inferred   4 Comparator(s).
+	inferred   4 Multiplexer(s).
+Unit <one_dist> synthesized.
+
+Synthesizing Unit <two_dist>.
+    Related source file is "N:\Xilinx_ISE\workspace\Lab05\two_dist.v".
+WARNING:Xst:647 - Input <InstructionD<15:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <InstructionM<10:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <InstructionM<25:21>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 5-bit comparator equal for signal <InstructionD[25]_InstructionM[15]_equal_2_o> created at line 46
+    Found 5-bit comparator equal for signal <InstructionD[20]_InstructionM[15]_equal_3_o> created at line 51
+    Found 5-bit comparator equal for signal <InstructionD[25]_InstructionM[20]_equal_19_o> created at line 98
+    Found 5-bit comparator equal for signal <InstructionD[20]_InstructionM[20]_equal_20_o> created at line 103
+    Summary:
+	inferred   4 Comparator(s).
+	inferred  14 Multiplexer(s).
+Unit <two_dist> synthesized.
+
+Synthesizing Unit <three_dist>.
+    Related source file is "N:\Xilinx_ISE\workspace\Lab05\three_dist.v".
+WARNING:Xst:647 - Input <InstructionD<15:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <InstructionW<10:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <InstructionW<25:21>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 5-bit comparator equal for signal <InstructionD[25]_InstructionW[15]_equal_2_o> created at line 44
+    Found 5-bit comparator equal for signal <InstructionD[20]_InstructionW[15]_equal_3_o> created at line 45
+    Found 5-bit comparator equal for signal <InstructionD[25]_InstructionW[20]_equal_18_o> created at line 76
+    Found 5-bit comparator equal for signal <InstructionD[20]_InstructionW[20]_equal_19_o> created at line 77
+    Summary:
+	inferred   4 Comparator(s).
+	inferred   7 Multiplexer(s).
+Unit <three_dist> synthesized.
+
+Synthesizing Unit <Data_selector>.
+    Related source file is "N:\Xilinx_ISE\workspace\Lab05\Data_selector.v".
+    Found 32-bit register for signal <LastResultW>.
+    Summary:
+	inferred  32 D-type flip-flop(s).
+	inferred  23 Multiplexer(s).
+Unit <Data_selector> synthesized.
+
+Synthesizing Unit <Ctr>.
+    Related source file is "N:\Xilinx_ISE\workspace\Lab05\Ctr.v".
+    Summary:
+	no macro.
+Unit <Ctr> synthesized.
+
+Synthesizing Unit <Data_memory>.
+    Related source file is "N:\Xilinx_ISE\workspace\Lab05\Data_memory.v".
+WARNING:Xst:647 - Input <DmemAddr<31:10>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1024x32-bit single-port RAM <Mram_DataMem> for signal <DataMem>.
+    Found 32-bit register for signal <DmemRdData>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred  32 D-type flip-flop(s).
+Unit <Data_memory> synthesized.
+
+Synthesizing Unit <Instruction_memory>.
+    Related source file is "N:\Xilinx_ISE\workspace\Lab05\Instruction_memory.v".
+WARNING:Xst:2999 - Signal 'InstMem', unconnected in block 'Instruction_memory', is tied to its initial value.
+    Found 256x32-bit single-port Read Only RAM <Mram_InstMem> for signal <InstMem>.
+    Found 32-bit register for signal <Instruction>.
+    Found 8-bit subtractor for signal <ImemRdAddr[31]_GND_10_o_sub_5_OUT<7:0>> created at line 42.
+    Summary:
+	inferred   1 RAM(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred  32 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <Instruction_memory> synthesized.
+
+Synthesizing Unit <register>.
+    Related source file is "N:\Xilinx_ISE\workspace\Lab05\register.v".
+    Found 32-bit register for signal <RegBTemp>.
+    Found 32-bit register for signal <RegARdData>.
+    Found 32-bit register for signal <RegBRdData>.
+    Found 32-bit register for signal <RegATemp>.
+    Found 32x32-bit dual-port RAM <Mram_regFile> for signal <regFile>.
+    Summary:
+	inferred   2 RAM(s).
+	inferred 128 D-type flip-flop(s).
+Unit <register> synthesized.
+
+Synthesizing Unit <ALU>.
+    Related source file is "N:\Xilinx_ISE\workspace\Lab05\ALU.v".
+    Found 32-bit subtractor for signal <SrcA[31]_SrcB[31]_sub_5_OUT> created at line 37.
+    Found 32-bit adder for signal <SrcA[31]_SrcB[31]_add_3_OUT> created at line 36.
+    Found 32-bit comparator greater for signal <SrcA[31]_SrcB[31]_LessThan_6_o> created at line 38
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred   1 Comparator(s).
+Unit <ALU> synthesized.
+
+Synthesizing Unit <signext>.
+    Related source file is "N:\Xilinx_ISE\workspace\Lab05\signext.v".
+    Summary:
+	no macro.
+Unit <signext> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 4
+ 1024x32-bit single-port RAM                           : 1
+ 256x32-bit single-port Read Only RAM                  : 1
+ 32x32-bit dual-port RAM                               : 2
+# Adders/Subtractors                                   : 5
+ 32-bit adder                                          : 3
+ 32-bit subtractor                                     : 1
+ 8-bit subtractor                                      : 1
+# Registers                                            : 37
+ 1-bit register                                        : 13
+ 32-bit register                                       : 18
+ 4-bit register                                        : 2
+ 5-bit register                                        : 4
+# Comparators                                          : 13
+ 32-bit comparator greater                             : 1
+ 5-bit comparator equal                                : 12
+# Multiplexers                                         : 56
+ 1-bit 2-to-1 multiplexer                              : 9
+ 32-bit 2-to-1 multiplexer                             : 29
+ 4-bit 2-to-1 multiplexer                              : 16
+ 5-bit 2-to-1 multiplexer                              : 1
+ 8-bit 2-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1710 - FF/Latch <ALUControlE_3> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <InstructionE_0> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionE_1> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionE_2> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionE_3> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionE_4> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionE_5> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionE_6> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionE_7> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionE_8> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionE_9> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionE_10> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionE_21> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionE_22> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionE_23> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionE_24> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionE_25> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionM_0> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionM_1> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionM_2> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionM_3> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionM_4> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionM_5> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionM_6> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionM_7> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionM_8> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionM_9> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionM_10> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionM_21> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionM_22> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionM_23> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionM_24> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionM_25> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionW_0> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionW_1> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionW_2> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionW_3> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionW_4> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionW_5> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionW_6> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionW_7> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionW_8> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionW_9> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionW_10> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionW_21> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionW_22> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionW_23> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionW_24> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionW_25> of sequential type is unconnected in block <Direct>.
+
+Synthesizing (advanced) Unit <Data_memory>.
+INFO:Xst:3226 - The RAM <Mram_DataMem> will be implemented as a BLOCK RAM, absorbing the following register(s): <DmemRdData>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 1024-word x 32-bit                  |          |
+    |     mode           | read-first                          |          |
+    |     clkA           | connected to signal <Clk>           | rise     |
+    |     weA            | connected to signal <DmemWrite>     | high     |
+    |     addrA          | connected to signal <DmemAddr>      |          |
+    |     diA            | connected to signal <DmemWrData>    |          |
+    |     doA            | connected to signal <DmemRdData>    |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <Data_memory> synthesized (advanced).
+
+Synthesizing (advanced) Unit <Instruction_memory>.
+INFO:Xst:3226 - The RAM <Mram_InstMem> will be implemented as a BLOCK RAM, absorbing the following register(s): <Instruction>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 32-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <Clk>           | rise     |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <_n0019>        |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <Instruction>   |          |
+    |     dorstA         | connected to signal <Rst>           | high     |
+    | reset value        | 11111111111111111111111111111111               |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <Instruction_memory> synthesized (advanced).
+
+Synthesizing (advanced) Unit <register>.
+INFO:Xst:3226 - The RAM <Mram_regFile1> will be implemented as a BLOCK RAM, absorbing the following register(s): <RegBTemp> <RegBRdData>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 32-word x 32-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <Clk>           | rise     |
+    |     weA            | connected to signal <RegWrite>      | high     |
+    |     addrA          | connected to signal <RegWrAddr>     |          |
+    |     diA            | connected to signal <RegWrData>     |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 32-word x 32-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <Clk>           | fall     |
+    |     addrB          | connected to signal <RegBRdAddr>    |          |
+    |     doB            | connected to signal <RegBRdData>    |          |
+    |     dorstB         | connected to internal node          | high     |
+    | reset value        | 00000000000000000000000000000000               |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3226 - The RAM <Mram_regFile> will be implemented as a BLOCK RAM, absorbing the following register(s): <RegATemp> <RegARdData>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 32-word x 32-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <Clk>           | rise     |
+    |     weA            | connected to signal <RegWrite>      | high     |
+    |     addrA          | connected to signal <RegWrAddr>     |          |
+    |     diA            | connected to signal <RegWrData>     |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 32-word x 32-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkB           | connected to signal <Clk>           | fall     |
+    |     addrB          | connected to signal <RegARdAddr>    |          |
+    |     doB            | connected to signal <RegARdData>    |          |
+    |     dorstB         | connected to internal node          | high     |
+    | reset value        | 00000000000000000000000000000000               |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <register> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 4
+ 1024x32-bit single-port block RAM                     : 1
+ 256x32-bit single-port block Read Only RAM            : 1
+ 32x32-bit dual-port block RAM                         : 2
+# Adders/Subtractors                                   : 5
+ 32-bit adder                                          : 3
+ 32-bit subtractor                                     : 1
+ 8-bit subtractor                                      : 1
+# Registers                                            : 425
+ Flip-Flops                                            : 425
+# Comparators                                          : 13
+ 32-bit comparator greater                             : 1
+ 5-bit comparator equal                                : 12
+# Multiplexers                                         : 118
+ 1-bit 2-to-1 multiplexer                              : 73
+ 32-bit 2-to-1 multiplexer                             : 27
+ 4-bit 2-to-1 multiplexer                              : 16
+ 5-bit 2-to-1 multiplexer                              : 1
+ 8-bit 2-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <Data_memory> ...
+
+Optimizing unit <signext> ...
+
+Optimizing unit <Top> ...
+
+Optimizing unit <Direct> ...
+
+Optimizing unit <one_dist> ...
+
+Optimizing unit <two_dist> ...
+
+Optimizing unit <three_dist> ...
+
+Optimizing unit <Data_selector> ...
+
+Optimizing unit <Instruction_memory> ...
+
+Optimizing unit <register> ...
+
+Optimizing unit <ALU> ...
+
+Optimizing unit <Ctr> ...
+WARNING:Xst:1710 - FF/Latch <ALUControlE_3> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <InstructionE_0> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionE_1> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionE_2> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionE_3> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionE_4> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionE_5> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionE_6> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionE_7> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionE_8> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionE_9> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionE_10> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionE_21> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionE_22> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionE_23> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionE_24> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionE_25> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionM_0> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionM_1> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionM_2> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionM_3> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionM_4> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionM_5> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionM_6> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionM_7> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionM_8> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionM_9> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionM_10> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionM_21> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionM_22> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionM_23> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionM_24> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionM_25> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionW_0> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionW_1> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionW_2> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionW_3> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionW_4> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionW_5> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionW_6> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionW_7> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionW_8> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionW_9> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionW_10> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionW_21> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionW_22> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionW_23> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionW_24> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:2677 - Node <InstructionW_25> of sequential type is unconnected in block <Direct>.
+WARNING:Xst:1710 - FF/Latch <PCPlus4D_0> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <PCPlus4D_1> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <PCF_0> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <PCF_1> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <PCPlus4E_0> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <PCPlus4E_1> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <PCBranchM_0> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <PCBranchM_1> (without init value) has a constant value of 0 in block <Top>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Top, actual ratio is 7.
+
+Final Macro Processing ...
+
+Processing Unit <Top> :
+	Found 2-bit shift register for signal <RegWriteW>.
+	Found 2-bit shift register for signal <MemToRegW>.
+Unit <Top> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 364
+ Flip-Flops                                            : 364
+# Shift Registers                                      : 2
+ 2-bit shift register                                  : 2
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : Top.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 1047
+#      GND                         : 5
+#      INV                         : 2
+#      LUT1                        : 29
+#      LUT2                        : 110
+#      LUT3                        : 139
+#      LUT4                        : 44
+#      LUT5                        : 151
+#      LUT6                        : 298
+#      MUXCY                       : 138
+#      MUXF7                       : 2
+#      VCC                         : 5
+#      XORCY                       : 124
+# FlipFlops/Latches                : 366
+#      FD                          : 286
+#      FDC                         : 30
+#      FDE                         : 2
+#      FDP                         : 48
+# RAMS                             : 5
+#      RAMB16BWER                  : 3
+#      RAMB8BWER                   : 2
+# Shift Registers                  : 2
+#      SRLC16E                     : 2
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 41
+#      IBUF                        : 1
+#      OBUF                        : 40
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             366  out of  18224     2%  
+ Number of Slice LUTs:                  775  out of   9112     8%  
+    Number used as Logic:               773  out of   9112     8%  
+    Number used as Memory:                2  out of   2176     0%  
+       Number used as SRL:                2
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    900
+   Number with an unused Flip Flop:     534  out of    900    59%  
+   Number with an unused LUT:           125  out of    900    13%  
+   Number of fully used LUT-FF pairs:   241  out of    900    26%  
+   Number of unique control sets:         5
+
+IO Utilization: 
+ Number of IOs:                          50
+ Number of bonded IOBs:                  42  out of    232    18%  
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:                4  out of     32    12%  
+    Number using Block RAM only:          4
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+Clk                                | BUFGP                  | 375   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 16.480ns (Maximum Frequency: 60.680MHz)
+   Minimum input arrival time before clock: 17.209ns
+   Maximum output required time after clock: 3.900ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'Clk'
+  Clock period: 16.480ns (frequency: 60.680MHz)
+  Total number of paths / destination ports: 709336 / 530
+-------------------------------------------------------------------------
+Delay:               16.480ns (Levels of Logic = 19)
+  Source:            Imem/Mram_InstMem (RAM)
+  Destination:       Imem/Mram_InstMem (RAM)
+  Source Clock:      Clk rising
+  Destination Clock: Clk rising
+
+  Data Path: Imem/Mram_InstMem to Imem/Mram_InstMem
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     RAMB16BWER:CLKA->DOA23    3   1.850   0.651  Mram_InstMem (Instruction<23>)
+     end scope: 'Imem:Instruction<23>'
+     begin scope: 'Direct:Instruction<23>'
+     LUT2:I1->O            6   0.205   0.973  Mmux_InstructionD161 (InstructionD<23>)
+     begin scope: 'Direct/one_dist:InstructionD<23>'
+     LUT6:I3->O            1   0.205   0.580  InstructionD[25]_InstructionE[15]_equal_1_o5_SW0 (N4)
+     LUT5:I4->O            2   0.205   0.721  InstructionD[25]_InstructionE[15]_equal_1_o5 (InstructionD[25]_InstructionE[15]_equal_1_o)
+     LUT5:I3->O            2   0.203   0.721  outtype<4>111 (outtype<4>11)
+     LUT6:I4->O            7   0.203   0.774  conf (conf)
+     end scope: 'Direct/one_dist:conf'
+     begin scope: 'Direct/two_dist:inconf'
+     LUT6:I5->O            2   0.205   0.617  Mmux_outtype412 (Mmux_outtype412)
+     LUT5:I4->O            2   0.205   0.617  Mmux_outtype2111 (Mmux_outtype211)
+     LUT4:I3->O            1   0.205   0.580  Mmux_outtype21 (Mmux_outtype2)
+     LUT6:I5->O            3   0.205   0.651  Mmux_outtype24 (outtype<1>)
+     end scope: 'Direct/two_dist:outtype<1>'
+     begin scope: 'Direct/three_dist:intype<1>'
+     LUT6:I5->O            1   0.205   0.684  Mmux_outtype23 (Mmux_outtype22)
+     LUT6:I4->O          134   0.203   1.967  Mmux_outtype24 (outtype<1>)
+     end scope: 'Direct/three_dist:outtype<1>'
+     end scope: 'Direct:type<1>'
+     begin scope: 'Imem:type<1>'
+     LUT6:I5->O            4   0.205   0.684  Mmux__n0019321 (Mmux__n001932)
+     LUT4:I3->O            2   0.205   0.617  Mmux__n0019611 (Mmux__n001961)
+     LUT6:I5->O            1   0.205   0.579  Mmux__n001981 (_n0019<7>)
+     RAMB16BWER:ADDRA12        0.350          Mram_InstMem
+    ----------------------------------------
+    Total                     16.480ns (5.064ns logic, 11.416ns route)
+                                       (30.7% logic, 69.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'Clk'
+  Total number of paths / destination ports: 295401 / 248
+-------------------------------------------------------------------------
+Offset:              17.209ns (Levels of Logic = 20)
+  Source:            Rst (PAD)
+  Destination:       Imem/Mram_InstMem (RAM)
+  Destination Clock: Clk rising
+
+  Data Path: Rst to Imem/Mram_InstMem
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           111   1.222   2.011  Rst_IBUF (Rst_IBUF)
+     begin scope: 'Direct:Rst'
+     LUT2:I0->O            6   0.203   0.973  Mmux_InstructionD161 (InstructionD<23>)
+     begin scope: 'Direct/one_dist:InstructionD<23>'
+     LUT6:I3->O            1   0.205   0.580  InstructionD[25]_InstructionE[15]_equal_1_o5_SW0 (N4)
+     LUT5:I4->O            2   0.205   0.721  InstructionD[25]_InstructionE[15]_equal_1_o5 (InstructionD[25]_InstructionE[15]_equal_1_o)
+     LUT5:I3->O            2   0.203   0.721  outtype<4>111 (outtype<4>11)
+     LUT6:I4->O            7   0.203   0.774  conf (conf)
+     end scope: 'Direct/one_dist:conf'
+     begin scope: 'Direct/two_dist:inconf'
+     LUT6:I5->O            2   0.205   0.617  Mmux_outtype412 (Mmux_outtype412)
+     LUT5:I4->O            2   0.205   0.617  Mmux_outtype2111 (Mmux_outtype211)
+     LUT4:I3->O            1   0.205   0.580  Mmux_outtype21 (Mmux_outtype2)
+     LUT6:I5->O            3   0.205   0.651  Mmux_outtype24 (outtype<1>)
+     end scope: 'Direct/two_dist:outtype<1>'
+     begin scope: 'Direct/three_dist:intype<1>'
+     LUT6:I5->O            1   0.205   0.684  Mmux_outtype23 (Mmux_outtype22)
+     LUT6:I4->O          134   0.203   1.967  Mmux_outtype24 (outtype<1>)
+     end scope: 'Direct/three_dist:outtype<1>'
+     end scope: 'Direct:type<1>'
+     begin scope: 'Imem:type<1>'
+     LUT6:I5->O            4   0.205   0.684  Mmux__n0019321 (Mmux__n001932)
+     LUT4:I3->O            2   0.205   0.617  Mmux__n0019611 (Mmux__n001961)
+     LUT6:I5->O            1   0.205   0.579  Mmux__n001981 (_n0019<7>)
+     RAMB16BWER:ADDRA12        0.350          Mram_InstMem
+    ----------------------------------------
+    Total                     17.209ns (4.434ns logic, 12.775ns route)
+                                       (25.8% logic, 74.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'Clk'
+  Total number of paths / destination ports: 38 / 38
+-------------------------------------------------------------------------
+Offset:              3.900ns (Levels of Logic = 1)
+  Source:            PCF_4 (FF)
+  Destination:       Test<4> (PAD)
+  Source Clock:      Clk rising
+
+  Data Path: PCF_4 to Test<4>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             11   0.447   0.882  PCF_4 (PCF_4)
+     OBUF:I->O                 2.571          Test_4_OBUF (Test<4>)
+    ----------------------------------------
+    Total                      3.900ns (3.018ns logic, 0.882ns route)
+                                       (77.4% logic, 22.6% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock Clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+Clk            |   16.480|    8.071|    3.871|         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 13.00 secs
+Total CPU time to Xst completion: 12.89 secs
+ 
+--> 
+
+Total memory usage is 4523196 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  122 (   0 filtered)
+Number of infos    :    4 (   0 filtered)
+
