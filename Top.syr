@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.14 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.14 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> Reading design: Top.prj
 
@@ -148,10 +148,7 @@ Elaborating module <two_dist>.
 Elaborating module <three_dist>.
 
 Elaborating module <Data_selector>.
-WARNING:HDLCompiler:91 - "N:\Xilinx_ISE\workspace\Lab05\Data_selector.v" Line 134: Signal <LastResultW> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
-WARNING:HDLCompiler:91 - "N:\Xilinx_ISE\workspace\Lab05\Data_selector.v" Line 141: Signal <LastResultW> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
-WARNING:HDLCompiler:91 - "N:\Xilinx_ISE\workspace\Lab05\Data_selector.v" Line 146: Signal <LastResultW> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
-WARNING:HDLCompiler:91 - "N:\Xilinx_ISE\workspace\Lab05\Data_selector.v" Line 153: Signal <LastResultW> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:1127 - "N:\Xilinx_ISE\workspace\Lab05\Data_selector.v" Line 37: Assignment to LastResultW ignored, since the identifier is never used
 
 Elaborating module <Ctr>.
 
@@ -264,10 +261,10 @@ Unit <three_dist> synthesized.
 
 Synthesizing Unit <Data_selector>.
     Related source file is "N:\Xilinx_ISE\workspace\Lab05\Data_selector.v".
-    Found 32-bit register for signal <LastResultW>.
+WARNING:Xst:647 - Input <ResultW> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <Clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Summary:
-	inferred  32 D-type flip-flop(s).
-	inferred  23 Multiplexer(s).
+	no macro.
 Unit <Data_selector> synthesized.
 
 Synthesizing Unit <Ctr>.
@@ -339,17 +336,17 @@ Macro Statistics
  32-bit adder                                          : 3
  32-bit subtractor                                     : 1
  8-bit subtractor                                      : 1
-# Registers                                            : 37
+# Registers                                            : 36
  1-bit register                                        : 13
- 32-bit register                                       : 18
+ 32-bit register                                       : 17
  4-bit register                                        : 2
  5-bit register                                        : 4
 # Comparators                                          : 13
  32-bit comparator greater                             : 1
  5-bit comparator equal                                : 12
-# Multiplexers                                         : 56
+# Multiplexers                                         : 33
  1-bit 2-to-1 multiplexer                              : 9
- 32-bit 2-to-1 multiplexer                             : 29
+ 32-bit 2-to-1 multiplexer                             : 6
  4-bit 2-to-1 multiplexer                              : 16
  5-bit 2-to-1 multiplexer                              : 1
  8-bit 2-to-1 multiplexer                              : 1
@@ -456,7 +453,7 @@ INFO:Xst:3226 - The RAM <Mram_regFile1> will be implemented as a BLOCK RAM, abso
     | Port A                                                              |
     |     aspect ratio   | 32-word x 32-bit                    |          |
     |     mode           | write-first                         |          |
-    |     clkA           | connected to signal <Clk>           | rise     |
+    |     clkA           | connected to signal <Clk>           | fall     |
     |     weA            | connected to signal <RegWrite>      | high     |
     |     addrA          | connected to signal <RegWrAddr>     |          |
     |     diA            | connected to signal <RegWrData>     |          |
@@ -466,7 +463,7 @@ INFO:Xst:3226 - The RAM <Mram_regFile1> will be implemented as a BLOCK RAM, abso
     | Port B                                                              |
     |     aspect ratio   | 32-word x 32-bit                    |          |
     |     mode           | write-first                         |          |
-    |     clkB           | connected to signal <Clk>           | fall     |
+    |     clkB           | connected to signal <Clk>           | rise     |
     |     addrB          | connected to signal <RegBRdAddr>    |          |
     |     doB            | connected to signal <RegBRdData>    |          |
     |     dorstB         | connected to internal node          | high     |
@@ -481,7 +478,7 @@ INFO:Xst:3226 - The RAM <Mram_regFile> will be implemented as a BLOCK RAM, absor
     | Port A                                                              |
     |     aspect ratio   | 32-word x 32-bit                    |          |
     |     mode           | write-first                         |          |
-    |     clkA           | connected to signal <Clk>           | rise     |
+    |     clkA           | connected to signal <Clk>           | fall     |
     |     weA            | connected to signal <RegWrite>      | high     |
     |     addrA          | connected to signal <RegWrAddr>     |          |
     |     diA            | connected to signal <RegWrData>     |          |
@@ -491,7 +488,7 @@ INFO:Xst:3226 - The RAM <Mram_regFile> will be implemented as a BLOCK RAM, absor
     | Port B                                                              |
     |     aspect ratio   | 32-word x 32-bit                    |          |
     |     mode           | write-first                         |          |
-    |     clkB           | connected to signal <Clk>           | fall     |
+    |     clkB           | connected to signal <Clk>           | rise     |
     |     addrB          | connected to signal <RegARdAddr>    |          |
     |     doB            | connected to signal <RegARdData>    |          |
     |     dorstB         | connected to internal node          | high     |
@@ -513,14 +510,14 @@ Macro Statistics
  32-bit adder                                          : 3
  32-bit subtractor                                     : 1
  8-bit subtractor                                      : 1
-# Registers                                            : 425
- Flip-Flops                                            : 425
+# Registers                                            : 393
+ Flip-Flops                                            : 393
 # Comparators                                          : 13
  32-bit comparator greater                             : 1
  5-bit comparator equal                                : 12
-# Multiplexers                                         : 118
+# Multiplexers                                         : 95
  1-bit 2-to-1 multiplexer                              : 73
- 32-bit 2-to-1 multiplexer                             : 27
+ 32-bit 2-to-1 multiplexer                             : 4
  4-bit 2-to-1 multiplexer                              : 16
  5-bit 2-to-1 multiplexer                              : 1
  8-bit 2-to-1 multiplexer                              : 1
@@ -627,8 +624,8 @@ Unit <Top> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 364
- Flip-Flops                                            : 364
+# Registers                                            : 332
+ Flip-Flops                                            : 332
 # Shift Registers                                      : 2
  2-bit shift register                                  : 2
 
@@ -653,21 +650,21 @@ Top Level Output File Name         : Top.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1047
+# BELS                             : 961
 #      GND                         : 5
 #      INV                         : 2
 #      LUT1                        : 29
-#      LUT2                        : 110
-#      LUT3                        : 139
-#      LUT4                        : 44
-#      LUT5                        : 151
-#      LUT6                        : 298
-#      MUXCY                       : 138
-#      MUXF7                       : 2
+#      LUT2                        : 113
+#      LUT3                        : 142
+#      LUT4                        : 45
+#      LUT5                        : 123
+#      LUT6                        : 237
+#      MUXCY                       : 135
+#      MUXF7                       : 1
 #      VCC                         : 5
 #      XORCY                       : 124
-# FlipFlops/Latches                : 366
-#      FD                          : 286
+# FlipFlops/Latches                : 334
+#      FD                          : 254
 #      FDC                         : 30
 #      FDE                         : 2
 #      FDP                         : 48
@@ -689,18 +686,18 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             366  out of  18224     2%  
- Number of Slice LUTs:                  775  out of   9112     8%  
-    Number used as Logic:               773  out of   9112     8%  
+ Number of Slice Registers:             334  out of  18224     1%  
+ Number of Slice LUTs:                  693  out of   9112     7%  
+    Number used as Logic:               691  out of   9112     7%  
     Number used as Memory:                2  out of   2176     0%  
        Number used as SRL:                2
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    900
-   Number with an unused Flip Flop:     534  out of    900    59%  
-   Number with an unused LUT:           125  out of    900    13%  
-   Number of fully used LUT-FF pairs:   241  out of    900    26%  
-   Number of unique control sets:         5
+ Number of LUT Flip Flop pairs used:    786
+   Number with an unused Flip Flop:     452  out of    786    57%  
+   Number with an unused LUT:            93  out of    786    11%  
+   Number of fully used LUT-FF pairs:   241  out of    786    30%  
+   Number of unique control sets:         4
 
 IO Utilization: 
  Number of IOs:                          50
@@ -732,7 +729,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-Clk                                | BUFGP                  | 375   |
+Clk                                | BUFGP                  | 343   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -743,9 +740,9 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 16.480ns (Maximum Frequency: 60.680MHz)
-   Minimum input arrival time before clock: 17.209ns
-   Maximum output required time after clock: 3.900ns
+   Minimum period: 13.008ns (Maximum Frequency: 76.876MHz)
+   Minimum input arrival time before clock: 13.674ns
+   Maximum output required time after clock: 3.950ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -754,109 +751,99 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'Clk'
-  Clock period: 16.480ns (frequency: 60.680MHz)
-  Total number of paths / destination ports: 709336 / 530
+  Clock period: 13.008ns (frequency: 76.876MHz)
+  Total number of paths / destination ports: 608965 / 498
 -------------------------------------------------------------------------
-Delay:               16.480ns (Levels of Logic = 19)
+Delay:               13.008ns (Levels of Logic = 15)
   Source:            Imem/Mram_InstMem (RAM)
-  Destination:       Imem/Mram_InstMem (RAM)
+  Destination:       PCF_2 (FF)
   Source Clock:      Clk rising
   Destination Clock: Clk rising
 
-  Data Path: Imem/Mram_InstMem to Imem/Mram_InstMem
+  Data Path: Imem/Mram_InstMem to PCF_2
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     RAMB16BWER:CLKA->DOA23    3   1.850   0.651  Mram_InstMem (Instruction<23>)
-     end scope: 'Imem:Instruction<23>'
-     begin scope: 'Direct:Instruction<23>'
-     LUT2:I1->O            6   0.205   0.973  Mmux_InstructionD161 (InstructionD<23>)
-     begin scope: 'Direct/one_dist:InstructionD<23>'
-     LUT6:I3->O            1   0.205   0.580  InstructionD[25]_InstructionE[15]_equal_1_o5_SW0 (N4)
-     LUT5:I4->O            2   0.205   0.721  InstructionD[25]_InstructionE[15]_equal_1_o5 (InstructionD[25]_InstructionE[15]_equal_1_o)
-     LUT5:I3->O            2   0.203   0.721  outtype<4>111 (outtype<4>11)
-     LUT6:I4->O            7   0.203   0.774  conf (conf)
+     RAMB16BWER:CLKA->DOA18    5   1.850   0.715  Mram_InstMem (Instruction<18>)
+     end scope: 'Imem:Instruction<18>'
+     begin scope: 'Direct:Instruction<18>'
+     LUT2:I1->O            6   0.205   0.973  Mmux_InstructionD101 (InstructionD<18>)
+     begin scope: 'Direct/one_dist:InstructionD<18>'
+     LUT6:I3->O            1   0.205   0.580  InstructionD[20]_InstructionE[15]_equal_2_o5_SW0 (N2)
+     LUT5:I4->O            2   0.205   0.721  InstructionD[20]_InstructionE[15]_equal_2_o5 (InstructionD[20]_InstructionE[15]_equal_2_o)
+     LUT5:I3->O            1   0.203   0.580  conf_SW0 (N8)
+     LUT6:I5->O            7   0.205   0.774  conf (conf)
      end scope: 'Direct/one_dist:conf'
      begin scope: 'Direct/two_dist:inconf'
-     LUT6:I5->O            2   0.205   0.617  Mmux_outtype412 (Mmux_outtype412)
-     LUT5:I4->O            2   0.205   0.617  Mmux_outtype2111 (Mmux_outtype211)
-     LUT4:I3->O            1   0.205   0.580  Mmux_outtype21 (Mmux_outtype2)
-     LUT6:I5->O            3   0.205   0.651  Mmux_outtype24 (outtype<1>)
-     end scope: 'Direct/two_dist:outtype<1>'
-     begin scope: 'Direct/three_dist:intype<1>'
-     LUT6:I5->O            1   0.205   0.684  Mmux_outtype23 (Mmux_outtype22)
-     LUT6:I4->O          134   0.203   1.967  Mmux_outtype24 (outtype<1>)
-     end scope: 'Direct/three_dist:outtype<1>'
-     end scope: 'Direct:type<1>'
-     begin scope: 'Imem:type<1>'
-     LUT6:I5->O            4   0.205   0.684  Mmux__n0019321 (Mmux__n001932)
-     LUT4:I3->O            2   0.205   0.617  Mmux__n0019611 (Mmux__n001961)
-     LUT6:I5->O            1   0.205   0.579  Mmux__n001981 (_n0019<7>)
-     RAMB16BWER:ADDRA12        0.350          Mram_InstMem
+     LUT3:I2->O            7   0.205   0.774  Mmux_conf13 (conf)
+     end scope: 'Direct/two_dist:conf'
+     begin scope: 'Direct/three_dist:inconf'
+     LUT5:I4->O            1   0.205   0.684  Mmux_outtype11 (Mmux_outtype1)
+     LUT4:I2->O          138   0.203   2.205  Mmux_outtype13 (outtype<0>)
+     end scope: 'Direct/three_dist:outtype<0>'
+     end scope: 'Direct:type<0>'
+     LUT4:I1->O           16   0.205   1.005  ConflictTypeD[3]_ConflictTypeD[3]_OR_169_o1 (ConflictTypeD[3]_ConflictTypeD[3]_OR_169_o)
+     LUT6:I5->O            1   0.205   0.000  Mmux_PCPlus4F[31]_PCBranchM[31]_mux_2_OUT321 (PCPlus4F[31]_PCBranchM[31]_mux_2_OUT<9>)
+     FDC:D                     0.102          PCF_9
     ----------------------------------------
-    Total                     16.480ns (5.064ns logic, 11.416ns route)
+    Total                     13.008ns (3.998ns logic, 9.010ns route)
                                        (30.7% logic, 69.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'Clk'
-  Total number of paths / destination ports: 295401 / 248
+  Total number of paths / destination ports: 239303 / 248
 -------------------------------------------------------------------------
-Offset:              17.209ns (Levels of Logic = 20)
+Offset:              13.674ns (Levels of Logic = 15)
   Source:            Rst (PAD)
-  Destination:       Imem/Mram_InstMem (RAM)
+  Destination:       PCF_2 (FF)
   Destination Clock: Clk rising
 
-  Data Path: Rst to Imem/Mram_InstMem
+  Data Path: Rst to PCF_2
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O           111   1.222   2.011  Rst_IBUF (Rst_IBUF)
      begin scope: 'Direct:Rst'
-     LUT2:I0->O            6   0.203   0.973  Mmux_InstructionD161 (InstructionD<23>)
-     begin scope: 'Direct/one_dist:InstructionD<23>'
-     LUT6:I3->O            1   0.205   0.580  InstructionD[25]_InstructionE[15]_equal_1_o5_SW0 (N4)
-     LUT5:I4->O            2   0.205   0.721  InstructionD[25]_InstructionE[15]_equal_1_o5 (InstructionD[25]_InstructionE[15]_equal_1_o)
-     LUT5:I3->O            2   0.203   0.721  outtype<4>111 (outtype<4>11)
-     LUT6:I4->O            7   0.203   0.774  conf (conf)
+     LUT2:I0->O            6   0.203   0.973  Mmux_InstructionD101 (InstructionD<18>)
+     begin scope: 'Direct/one_dist:InstructionD<18>'
+     LUT6:I3->O            1   0.205   0.580  InstructionD[20]_InstructionE[15]_equal_2_o5_SW0 (N2)
+     LUT5:I4->O            2   0.205   0.721  InstructionD[20]_InstructionE[15]_equal_2_o5 (InstructionD[20]_InstructionE[15]_equal_2_o)
+     LUT5:I3->O            1   0.203   0.580  conf_SW0 (N8)
+     LUT6:I5->O            7   0.205   0.774  conf (conf)
      end scope: 'Direct/one_dist:conf'
      begin scope: 'Direct/two_dist:inconf'
-     LUT6:I5->O            2   0.205   0.617  Mmux_outtype412 (Mmux_outtype412)
-     LUT5:I4->O            2   0.205   0.617  Mmux_outtype2111 (Mmux_outtype211)
-     LUT4:I3->O            1   0.205   0.580  Mmux_outtype21 (Mmux_outtype2)
-     LUT6:I5->O            3   0.205   0.651  Mmux_outtype24 (outtype<1>)
-     end scope: 'Direct/two_dist:outtype<1>'
-     begin scope: 'Direct/three_dist:intype<1>'
-     LUT6:I5->O            1   0.205   0.684  Mmux_outtype23 (Mmux_outtype22)
-     LUT6:I4->O          134   0.203   1.967  Mmux_outtype24 (outtype<1>)
-     end scope: 'Direct/three_dist:outtype<1>'
-     end scope: 'Direct:type<1>'
-     begin scope: 'Imem:type<1>'
-     LUT6:I5->O            4   0.205   0.684  Mmux__n0019321 (Mmux__n001932)
-     LUT4:I3->O            2   0.205   0.617  Mmux__n0019611 (Mmux__n001961)
-     LUT6:I5->O            1   0.205   0.579  Mmux__n001981 (_n0019<7>)
-     RAMB16BWER:ADDRA12        0.350          Mram_InstMem
+     LUT3:I2->O            7   0.205   0.774  Mmux_conf13 (conf)
+     end scope: 'Direct/two_dist:conf'
+     begin scope: 'Direct/three_dist:inconf'
+     LUT5:I4->O            1   0.205   0.684  Mmux_outtype11 (Mmux_outtype1)
+     LUT4:I2->O          138   0.203   2.205  Mmux_outtype13 (outtype<0>)
+     end scope: 'Direct/three_dist:outtype<0>'
+     end scope: 'Direct:type<0>'
+     LUT4:I1->O           16   0.205   1.005  ConflictTypeD[3]_ConflictTypeD[3]_OR_169_o1 (ConflictTypeD[3]_ConflictTypeD[3]_OR_169_o)
+     LUT6:I5->O            1   0.205   0.000  Mmux_PCPlus4F[31]_PCBranchM[31]_mux_2_OUT321 (PCPlus4F[31]_PCBranchM[31]_mux_2_OUT<9>)
+     FDC:D                     0.102          PCF_9
     ----------------------------------------
-    Total                     17.209ns (4.434ns logic, 12.775ns route)
-                                       (25.8% logic, 74.2% route)
+    Total                     13.674ns (3.368ns logic, 10.306ns route)
+                                       (24.6% logic, 75.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'Clk'
   Total number of paths / destination ports: 38 / 38
 -------------------------------------------------------------------------
-Offset:              3.900ns (Levels of Logic = 1)
-  Source:            PCF_4 (FF)
-  Destination:       Test<4> (PAD)
+Offset:              3.950ns (Levels of Logic = 1)
+  Source:            PCF_2 (FF)
+  Destination:       Test<2> (PAD)
   Source Clock:      Clk rising
 
-  Data Path: PCF_4 to Test<4>
+  Data Path: PCF_2 to Test<2>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             11   0.447   0.882  PCF_4 (PCF_4)
-     OBUF:I->O                 2.571          Test_4_OBUF (Test<4>)
+     FDC:C->Q             13   0.447   0.932  PCF_2 (PCF_2)
+     OBUF:I->O                 2.571          Test_2_OBUF (Test<2>)
     ----------------------------------------
-    Total                      3.900ns (3.018ns logic, 0.882ns route)
-                                       (77.4% logic, 22.6% route)
+    Total                      3.950ns (3.018ns logic, 0.932ns route)
+                                       (76.4% logic, 23.6% route)
 
 =========================================================================
 
@@ -868,20 +855,20 @@ Clock to Setup on destination clock Clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-Clk            |   16.480|    8.071|    3.871|         |
+Clk            |   13.008|         |    3.725|         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 13.00 secs
-Total CPU time to Xst completion: 12.89 secs
+Total REAL time to Xst completion: 11.00 secs
+Total CPU time to Xst completion: 10.55 secs
  
 --> 
 
 Total memory usage is 4523196 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  122 (   0 filtered)
+Number of warnings :  121 (   0 filtered)
 Number of infos    :    4 (   0 filtered)
 

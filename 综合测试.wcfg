@@ -10,7 +10,7 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="9" />
+   <WVObjectSize size="13" />
    <wvobject fp_name="/Top_tb/Clk" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">Clk</obj_property>
       <obj_property name="ObjectShortName">Clk</obj_property>
@@ -32,26 +32,46 @@
    <wvobject fp_name="/Top_tb/uut/register/regFile[0]" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">[0,31:0]</obj_property>
       <obj_property name="ObjectShortName">regFile[0,31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/Top_tb/uut/register/regFile[1]" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">[1,31:0]</obj_property>
       <obj_property name="ObjectShortName">regFile[1,31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Top_tb/uut/register/regFile[2]" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">[2,31:0]</obj_property>
+      <obj_property name="ObjectShortName">regFile[2,31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Top_tb/uut/register/regFile[3]" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">[3,31:0]</obj_property>
+      <obj_property name="ObjectShortName">regFile[3,31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Top_tb/uut/register/regFile[5]" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">[5,31:0]</obj_property>
+      <obj_property name="ObjectShortName">regFile[5,31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/Top_tb/uut/register/regFile[6]" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">[6,31:0]</obj_property>
       <obj_property name="ObjectShortName">regFile[6,31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/Top_tb/uut/register/regFile[7]" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">[7,31:0]</obj_property>
       <obj_property name="ObjectShortName">regFile[7,31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/Top_tb/uut/register/regFile[8]" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">[8,31:0]</obj_property>
       <obj_property name="ObjectShortName">regFile[8,31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Top_tb/uut/register/regFile[9]" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">[9,31:0]</obj_property>
+      <obj_property name="ObjectShortName">regFile[9,31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>

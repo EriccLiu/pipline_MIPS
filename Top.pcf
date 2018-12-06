@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Thu Dec 06 09:27:00 2018
+// Written by: Map P.20131013 on Thu Dec 06 11:05:36 2018
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -112,24 +112,7 @@ TIMEGRP sys_clk = BEL "PCPlus4D_2" BEL "PCPlus4D_3" BEL "PCPlus4D_4" BEL
         "Direct/InstructionW_20" BEL "Direct/InstructionW_26" BEL
         "Direct/InstructionW_27" BEL "Direct/InstructionW_28" BEL
         "Direct/InstructionW_29" BEL "Direct/InstructionW_30" BEL
-        "Direct/InstructionW_31" BEL "Data_selector/LastResultW_0" BEL
-        "Data_selector/LastResultW_1" BEL "Data_selector/LastResultW_2" BEL
-        "Data_selector/LastResultW_3" BEL "Data_selector/LastResultW_4" BEL
-        "Data_selector/LastResultW_5" BEL "Data_selector/LastResultW_6" BEL
-        "Data_selector/LastResultW_7" BEL "Data_selector/LastResultW_8" BEL
-        "Data_selector/LastResultW_9" BEL "Data_selector/LastResultW_10" BEL
-        "Data_selector/LastResultW_11" BEL "Data_selector/LastResultW_12" BEL
-        "Data_selector/LastResultW_13" BEL "Data_selector/LastResultW_14" BEL
-        "Data_selector/LastResultW_15" BEL "Data_selector/LastResultW_16" BEL
-        "Data_selector/LastResultW_17" BEL "Data_selector/LastResultW_18" BEL
-        "Data_selector/LastResultW_19" BEL "Data_selector/LastResultW_20" BEL
-        "Data_selector/LastResultW_21" BEL "Data_selector/LastResultW_22" BEL
-        "Data_selector/LastResultW_23" BEL "Data_selector/LastResultW_24" BEL
-        "Data_selector/LastResultW_25" BEL "Data_selector/LastResultW_26" BEL
-        "Data_selector/LastResultW_27" BEL "Data_selector/LastResultW_28" BEL
-        "Data_selector/LastResultW_29" BEL "Data_selector/LastResultW_30" BEL
-        "Data_selector/LastResultW_31" PIN
-        "Data_memory/Mram_DataMem1_pins<10>" PIN
+        "Direct/InstructionW_31" PIN "Data_memory/Mram_DataMem1_pins<10>" PIN
         "Data_memory/Mram_DataMem2_pins<10>" PIN "Imem/Mram_InstMem_pins<9>"
         PIN "register/Mram_regFile1_pins<16>" PIN
         "register/Mram_regFile1_pins<17>" PIN "register/Mram_regFile_pins<16>"

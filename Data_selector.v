@@ -63,16 +63,6 @@ end
 		目的是Load/Store/Beq指令
 	8h：目的是R类指令，访存周期指令结果与取值周期指令第二个操作数
 	
- 指令距离为3时
-	源为R类指令的结果
-	9h：目的是R类指令，回写周期指令结果与取值周期指令第一个操作数
-		目的是Load/Store/Beq指令
-	ah：目的是R类指令，回写周期指令结果与取值周期指令第二个操作数
-	源为Load指令的结果
-	bh：目的是R类指令，回写周期指令结果与取值周期指令第一个操作数
-		目的是Load/Store/Beq指令
-	ch：目的是R类指令，回写周期指令结果与取值周期指令第二个操作数
-	
 */
 
 always @ (type or ALUOutM or ALUOutW or ReadDataW or ReadSrcAE or ReadSrcBE)
@@ -90,20 +80,6 @@ begin
 			SrcAE <= ReadSrcAE;
 			SrcBE <= ALUOutM;
 		end
-
-		/*
-		4'h3:
-		begin
-			SrcAE <= ReadDataW;
-			SrcBE <= ReadSrcBE;
-		end
-
-		4'h4:
-		begin
-			SrcAE <= ReadSrcAE;
-			SrcBE <= ReadDataW;
-		end
-		*/
 		
 		4'h5:
 		begin
@@ -127,30 +103,6 @@ begin
 		begin
 			SrcAE <= ReadSrcAE;
 			SrcBE <= ReadDataW;
-		end
-		
-		4'h9:
-		begin
-			SrcAE <= LastResultW;
-			SrcBE <= ReadSrcBE;
-		end
-		
-		4'ha:
-		begin
-			SrcAE <= ReadSrcAE;
-			SrcBE <= LastResultW;
-		end
-		
-		4'hb:
-		begin
-			SrcAE <= LastResultW;
-			SrcBE <= ReadSrcBE;
-		end
-		
-		4'hc:
-		begin
-			SrcAE <= ReadSrcAE;
-			SrcBE <= LastResultW;
 		end
 		
 		default:

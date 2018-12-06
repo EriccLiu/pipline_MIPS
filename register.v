@@ -40,17 +40,17 @@ begin
 end
 	
 	//write and read on rising clock edge
-always @ (negedge Clk)
+always @ (posedge Clk)
 begin
-	RegATemp <= (RegARdAddr != 0) ? regFile[RegARdAddr] : 0;
-   RegBTemp <= (RegBRdAddr != 0) ? regFile[RegBRdAddr] : 0;
+	RegARdData <= (RegARdAddr != 0) ? regFile[RegARdAddr] : 0;
+   RegBRdData <= (RegBRdAddr != 0) ? regFile[RegBRdAddr] : 0;
 
 end
 
-always @ (posedge Clk)
+always @ (negedge Clk)
 begin
-	RegARdData <= RegATemp;
-   RegBRdData <= RegBTemp;
+	//RegARdData <= RegATemp;
+   //RegBRdData <= RegBTemp;
    if(RegWrite == 1'b1)
       regFile[RegWrAddr]<= RegWrData;
 end

@@ -28,20 +28,20 @@ INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on
 Timing constraint: TS_Clk = PERIOD TIMEGRP "sys_clk" 100 MHz HIGH 50%;
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
- 709334 paths analyzed, 1411 endpoints analyzed, 164 failing endpoints
- 164 timing errors detected. (164 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is  18.642ns.
+ 608963 paths analyzed, 1379 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   9.904ns.
 --------------------------------------------------------------------------------
 
-Paths for end point ZeroM (SLICE_X29Y27.AX), 51635 paths
+Paths for end point Imem/Mram_InstMem (RAMB16_X1Y18.ADDRA11), 3351 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     -4.321ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               register/Mram_regFile1 (RAM)
-  Destination:          ZeroM (FF)
-  Requirement:          5.000ns
-  Data Path Delay:      9.241ns (Levels of Logic = 7)
-  Clock Path Skew:      -0.045ns (0.445 - 0.490)
-  Source Clock:         Clk_BUFGP falling at 5.000ns
+Slack (setup path):     0.096ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               Imem/Mram_InstMem (RAM)
+  Destination:          Imem/Mram_InstMem (RAM)
+  Requirement:          10.000ns
+  Data Path Delay:      9.869ns (Levels of Logic = 9)
+  Clock Path Skew:      0.000ns
+  Source Clock:         Clk_BUFGP rising at 0.000ns
   Destination Clock:    Clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
 
@@ -51,50 +51,54 @@ Slack (setup path):     -4.321ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: register/Mram_regFile1 to ZeroM
+  Maximum Data Path at Slow Process Corner: Imem/Mram_InstMem to Imem/Mram_InstMem
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    RAMB8_X1Y16.DOADO15  Trcko_DOA_REG         1.600   register/Mram_regFile1
-                                                       register/Mram_regFile1
-    SLICE_X33Y31.A6      net (fanout=2)        0.761   WriteDataE<15>
-    SLICE_X33Y31.A       Tilo                  0.259   WriteDataM<19>
-                                                       mux3811
-    SLICE_X23Y24.A6      net (fanout=1)        1.025   ReadSrcBE<15>
-    SLICE_X23Y24.A       Tilo                  0.259   Data_selector/Mmux_SrcAE41
-                                                       Data_selector/Mmux_SrcBE73
-    SLICE_X18Y24.D4      net (fanout=4)        1.348   SrcBE<15>
-    SLICE_X18Y24.COUT    Topcyd                0.274   ALU/Mcompar_SrcA[31]_SrcB[31]_LessThan_6_o_cy<7>
-                                                       ALU/Mcompar_SrcA[31]_SrcB[31]_LessThan_6_o_lutdi7
-                                                       ALU/Mcompar_SrcA[31]_SrcB[31]_LessThan_6_o_cy<7>
-    SLICE_X18Y25.CIN     net (fanout=1)        0.003   ALU/Mcompar_SrcA[31]_SrcB[31]_LessThan_6_o_cy<7>
-    SLICE_X18Y25.COUT    Tbyp                  0.076   ALU/Mcompar_SrcA[31]_SrcB[31]_LessThan_6_o_cy<11>
-                                                       ALU/Mcompar_SrcA[31]_SrcB[31]_LessThan_6_o_cy<11>
-    SLICE_X18Y26.CIN     net (fanout=1)        0.003   ALU/Mcompar_SrcA[31]_SrcB[31]_LessThan_6_o_cy<11>
-    SLICE_X18Y26.COUT    Tbyp                  0.076   ALU/Mcompar_SrcA[31]_SrcB[31]_LessThan_6_o_cy<15>
-                                                       ALU/Mcompar_SrcA[31]_SrcB[31]_LessThan_6_o_cy<15>
-    SLICE_X24Y22.D5      net (fanout=3)        1.270   ALU/Mcompar_SrcA[31]_SrcB[31]_LessThan_6_o_cy<15>
-    SLICE_X24Y22.CMUX    Topdc                 0.338   ALU/N67
-                                                       ALU/Zero<31>1_F
-                                                       ALU/Zero<31>1
-    SLICE_X25Y27.A2      net (fanout=1)        1.187   ALU/Zero<31>
-    SLICE_X25Y27.A       Tilo                  0.259   ALU/Zero<31>2
-                                                       ALU/Zero<31>7
-    SLICE_X29Y27.AX      net (fanout=1)        0.440   Zero
-    SLICE_X29Y27.CLK     Tdick                 0.063   ZeroM
-                                                       ZeroM
+    RAMB16_X1Y18.DOA16   Trcko_DOA             1.850   Imem/Mram_InstMem
+                                                       Imem/Mram_InstMem
+    SLICE_X25Y37.A6      net (fanout=5)        0.973   InstructionD<16>
+    SLICE_X25Y37.A       Tilo                  0.259   Direct/InstructionD<23>
+                                                       Direct/Mmux_InstructionD81
+    SLICE_X22Y36.B5      net (fanout=6)        0.580   Direct/InstructionD<16>
+    SLICE_X22Y36.B       Tilo                  0.203   Direct/one_dist/N2
+                                                       Direct/one_dist/InstructionD[20]_InstructionE[15]_equal_2_o5_SW0
+    SLICE_X22Y36.A5      net (fanout=1)        0.222   Direct/one_dist/N2
+    SLICE_X22Y36.A       Tilo                  0.203   Direct/one_dist/N2
+                                                       Direct/one_dist/InstructionD[20]_InstructionE[15]_equal_2_o5
+    SLICE_X21Y37.B5      net (fanout=2)        0.514   Direct/one_dist/InstructionD[20]_InstructionE[15]_equal_2_o
+    SLICE_X21Y37.B       Tilo                  0.259   Direct/one_dist/conf5
+                                                       Direct/one_dist/conf_SW0
+    SLICE_X21Y37.A5      net (fanout=1)        0.187   Direct/one_dist/N8
+    SLICE_X21Y37.A       Tilo                  0.259   Direct/one_dist/conf5
+                                                       Direct/one_dist/conf
+    SLICE_X21Y36.A6      net (fanout=7)        0.305   Direct/one_dist_conf
+    SLICE_X21Y36.A       Tilo                  0.259   Direct/second_type<3>
+                                                       Direct/two_dist/Mmux_conf13
+    SLICE_X21Y34.B5      net (fanout=7)        0.570   Direct/two_dist_conf
+    SLICE_X21Y34.B       Tilo                  0.259   Direct/three_dist/N15
+                                                       Direct/three_dist/Mmux_outtype44
+    SLICE_X21Y35.A6      net (fanout=139)      0.354   ConflictTypeD<3>
+    SLICE_X21Y35.A       Tilo                  0.259   Imem/N01
+                                                       Imem/Mmux__n001971_SW0
+    SLICE_X21Y32.A3      net (fanout=1)        0.703   Imem/N20
+    SLICE_X21Y32.A       Tilo                  0.259   Imem/N21
+                                                       Imem/Mmux__n001971
+    RAMB16_X1Y18.ADDRA11 net (fanout=1)        1.042   Imem/_n0019<6>
+    RAMB16_X1Y18.CLKA    Trcck_ADDRA           0.350   Imem/Mram_InstMem
+                                                       Imem/Mram_InstMem
     -------------------------------------------------  ---------------------------
-    Total                                      9.241ns (3.204ns logic, 6.037ns route)
-                                                       (34.7% logic, 65.3% route)
+    Total                                      9.869ns (4.419ns logic, 5.450ns route)
+                                                       (44.8% logic, 55.2% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     -4.308ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               register/Mram_regFile1 (RAM)
-  Destination:          ZeroM (FF)
-  Requirement:          5.000ns
-  Data Path Delay:      9.228ns (Levels of Logic = 7)
-  Clock Path Skew:      -0.045ns (0.445 - 0.490)
-  Source Clock:         Clk_BUFGP falling at 5.000ns
+Slack (setup path):     0.136ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               Imem/Mram_InstMem (RAM)
+  Destination:          Imem/Mram_InstMem (RAM)
+  Requirement:          10.000ns
+  Data Path Delay:      9.829ns (Levels of Logic = 6)
+  Clock Path Skew:      0.000ns
+  Source Clock:         Clk_BUFGP rising at 0.000ns
   Destination Clock:    Clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
 
@@ -104,50 +108,45 @@ Slack (setup path):     -4.308ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: register/Mram_regFile1 to ZeroM
+  Maximum Data Path at Slow Process Corner: Imem/Mram_InstMem to Imem/Mram_InstMem
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    RAMB8_X1Y16.DOADO15  Trcko_DOA_REG         1.600   register/Mram_regFile1
-                                                       register/Mram_regFile1
-    SLICE_X33Y31.A6      net (fanout=2)        0.761   WriteDataE<15>
-    SLICE_X33Y31.A       Tilo                  0.259   WriteDataM<19>
-                                                       mux3811
-    SLICE_X23Y24.A6      net (fanout=1)        1.025   ReadSrcBE<15>
-    SLICE_X23Y24.A       Tilo                  0.259   Data_selector/Mmux_SrcAE41
-                                                       Data_selector/Mmux_SrcBE73
-    SLICE_X18Y24.D4      net (fanout=4)        1.348   SrcBE<15>
-    SLICE_X18Y24.COUT    Topcyd                0.261   ALU/Mcompar_SrcA[31]_SrcB[31]_LessThan_6_o_cy<7>
-                                                       ALU/Mcompar_SrcA[31]_SrcB[31]_LessThan_6_o_lut<7>
-                                                       ALU/Mcompar_SrcA[31]_SrcB[31]_LessThan_6_o_cy<7>
-    SLICE_X18Y25.CIN     net (fanout=1)        0.003   ALU/Mcompar_SrcA[31]_SrcB[31]_LessThan_6_o_cy<7>
-    SLICE_X18Y25.COUT    Tbyp                  0.076   ALU/Mcompar_SrcA[31]_SrcB[31]_LessThan_6_o_cy<11>
-                                                       ALU/Mcompar_SrcA[31]_SrcB[31]_LessThan_6_o_cy<11>
-    SLICE_X18Y26.CIN     net (fanout=1)        0.003   ALU/Mcompar_SrcA[31]_SrcB[31]_LessThan_6_o_cy<11>
-    SLICE_X18Y26.COUT    Tbyp                  0.076   ALU/Mcompar_SrcA[31]_SrcB[31]_LessThan_6_o_cy<15>
-                                                       ALU/Mcompar_SrcA[31]_SrcB[31]_LessThan_6_o_cy<15>
-    SLICE_X24Y22.D5      net (fanout=3)        1.270   ALU/Mcompar_SrcA[31]_SrcB[31]_LessThan_6_o_cy<15>
-    SLICE_X24Y22.CMUX    Topdc                 0.338   ALU/N67
-                                                       ALU/Zero<31>1_F
-                                                       ALU/Zero<31>1
-    SLICE_X25Y27.A2      net (fanout=1)        1.187   ALU/Zero<31>
-    SLICE_X25Y27.A       Tilo                  0.259   ALU/Zero<31>2
-                                                       ALU/Zero<31>7
-    SLICE_X29Y27.AX      net (fanout=1)        0.440   Zero
-    SLICE_X29Y27.CLK     Tdick                 0.063   ZeroM
-                                                       ZeroM
+    RAMB16_X1Y18.DOA31   Trcko_DOA             1.850   Imem/Mram_InstMem
+                                                       Imem/Mram_InstMem
+    SLICE_X23Y38.B6      net (fanout=8)        1.230   InstructionD<31>
+    SLICE_X23Y38.B       Tilo                  0.259   Direct/InstructionD<28>
+                                                       Direct/Mmux_InstructionD251
+    SLICE_X22Y38.B3      net (fanout=16)       1.109   Direct/InstructionD<31>
+    SLICE_X22Y38.B       Tilo                  0.203   Direct/three_dist/N8
+                                                       Direct/three_dist/InstructionD[31]_GND_5_o_equal_12_o<31>11
+    SLICE_X21Y39.B6      net (fanout=8)        0.719   Direct/three_dist/InstructionD[31]_GND_5_o_equal_12_o<31>1
+    SLICE_X21Y39.B       Tilo                  0.259   Direct/three_dist/InstructionW[31]_GND_5_o_equal_34_o
+                                                       Direct/three_dist/Mmux_outtype44_SW2
+    SLICE_X21Y34.B1      net (fanout=1)        0.974   Direct/three_dist/N17
+    SLICE_X21Y34.B       Tilo                  0.259   Direct/three_dist/N15
+                                                       Direct/three_dist/Mmux_outtype44
+    SLICE_X21Y35.A6      net (fanout=139)      0.354   ConflictTypeD<3>
+    SLICE_X21Y35.A       Tilo                  0.259   Imem/N01
+                                                       Imem/Mmux__n001971_SW0
+    SLICE_X21Y32.A3      net (fanout=1)        0.703   Imem/N20
+    SLICE_X21Y32.A       Tilo                  0.259   Imem/N21
+                                                       Imem/Mmux__n001971
+    RAMB16_X1Y18.ADDRA11 net (fanout=1)        1.042   Imem/_n0019<6>
+    RAMB16_X1Y18.CLKA    Trcck_ADDRA           0.350   Imem/Mram_InstMem
+                                                       Imem/Mram_InstMem
     -------------------------------------------------  ---------------------------
-    Total                                      9.228ns (3.191ns logic, 6.037ns route)
-                                                       (34.6% logic, 65.4% route)
+    Total                                      9.829ns (3.698ns logic, 6.131ns route)
+                                                       (37.6% logic, 62.4% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     -4.301ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               register/Mram_regFile1 (RAM)
-  Destination:          ZeroM (FF)
-  Requirement:          5.000ns
-  Data Path Delay:      9.221ns (Levels of Logic = 7)
-  Clock Path Skew:      -0.045ns (0.445 - 0.490)
-  Source Clock:         Clk_BUFGP falling at 5.000ns
+Slack (setup path):     0.153ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               Imem/Mram_InstMem (RAM)
+  Destination:          Imem/Mram_InstMem (RAM)
+  Requirement:          10.000ns
+  Data Path Delay:      9.812ns (Levels of Logic = 9)
+  Clock Path Skew:      0.000ns
+  Source Clock:         Clk_BUFGP rising at 0.000ns
   Destination Clock:    Clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
 
@@ -157,53 +156,57 @@ Slack (setup path):     -4.301ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: register/Mram_regFile1 to ZeroM
+  Maximum Data Path at Slow Process Corner: Imem/Mram_InstMem to Imem/Mram_InstMem
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    RAMB8_X1Y16.DOADO15  Trcko_DOA_REG         1.600   register/Mram_regFile1
-                                                       register/Mram_regFile1
-    SLICE_X33Y31.A6      net (fanout=2)        0.761   WriteDataE<15>
-    SLICE_X33Y31.A       Tilo                  0.259   WriteDataM<19>
-                                                       mux3811
-    SLICE_X23Y24.A6      net (fanout=1)        1.025   ReadSrcBE<15>
-    SLICE_X23Y24.A       Tilo                  0.259   Data_selector/Mmux_SrcAE41
-                                                       Data_selector/Mmux_SrcBE73
-    SLICE_X18Y24.D4      net (fanout=4)        1.348   SrcBE<15>
-    SLICE_X18Y24.COUT    Topcyd                0.274   ALU/Mcompar_SrcA[31]_SrcB[31]_LessThan_6_o_cy<7>
-                                                       ALU/Mcompar_SrcA[31]_SrcB[31]_LessThan_6_o_lutdi7
-                                                       ALU/Mcompar_SrcA[31]_SrcB[31]_LessThan_6_o_cy<7>
-    SLICE_X18Y25.CIN     net (fanout=1)        0.003   ALU/Mcompar_SrcA[31]_SrcB[31]_LessThan_6_o_cy<7>
-    SLICE_X18Y25.COUT    Tbyp                  0.076   ALU/Mcompar_SrcA[31]_SrcB[31]_LessThan_6_o_cy<11>
-                                                       ALU/Mcompar_SrcA[31]_SrcB[31]_LessThan_6_o_cy<11>
-    SLICE_X18Y26.CIN     net (fanout=1)        0.003   ALU/Mcompar_SrcA[31]_SrcB[31]_LessThan_6_o_cy<11>
-    SLICE_X18Y26.COUT    Tbyp                  0.076   ALU/Mcompar_SrcA[31]_SrcB[31]_LessThan_6_o_cy<15>
-                                                       ALU/Mcompar_SrcA[31]_SrcB[31]_LessThan_6_o_cy<15>
-    SLICE_X24Y22.C4      net (fanout=3)        1.245   ALU/Mcompar_SrcA[31]_SrcB[31]_LessThan_6_o_cy<15>
-    SLICE_X24Y22.CMUX    Tilo                  0.343   ALU/N67
-                                                       ALU/Zero<31>1_G
-                                                       ALU/Zero<31>1
-    SLICE_X25Y27.A2      net (fanout=1)        1.187   ALU/Zero<31>
-    SLICE_X25Y27.A       Tilo                  0.259   ALU/Zero<31>2
-                                                       ALU/Zero<31>7
-    SLICE_X29Y27.AX      net (fanout=1)        0.440   Zero
-    SLICE_X29Y27.CLK     Tdick                 0.063   ZeroM
-                                                       ZeroM
+    RAMB16_X1Y18.DOA16   Trcko_DOA             1.850   Imem/Mram_InstMem
+                                                       Imem/Mram_InstMem
+    SLICE_X25Y37.A6      net (fanout=5)        0.973   InstructionD<16>
+    SLICE_X25Y37.A       Tilo                  0.259   Direct/InstructionD<23>
+                                                       Direct/Mmux_InstructionD81
+    SLICE_X22Y36.B5      net (fanout=6)        0.580   Direct/InstructionD<16>
+    SLICE_X22Y36.B       Tilo                  0.203   Direct/one_dist/N2
+                                                       Direct/one_dist/InstructionD[20]_InstructionE[15]_equal_2_o5_SW0
+    SLICE_X22Y36.A5      net (fanout=1)        0.222   Direct/one_dist/N2
+    SLICE_X22Y36.A       Tilo                  0.203   Direct/one_dist/N2
+                                                       Direct/one_dist/InstructionD[20]_InstructionE[15]_equal_2_o5
+    SLICE_X21Y37.B5      net (fanout=2)        0.514   Direct/one_dist/InstructionD[20]_InstructionE[15]_equal_2_o
+    SLICE_X21Y37.B       Tilo                  0.259   Direct/one_dist/conf5
+                                                       Direct/one_dist/conf_SW0
+    SLICE_X21Y37.A5      net (fanout=1)        0.187   Direct/one_dist/N8
+    SLICE_X21Y37.A       Tilo                  0.259   Direct/one_dist/conf5
+                                                       Direct/one_dist/conf
+    SLICE_X21Y36.A6      net (fanout=7)        0.305   Direct/one_dist_conf
+    SLICE_X21Y36.A       Tilo                  0.259   Direct/second_type<3>
+                                                       Direct/two_dist/Mmux_conf13
+    SLICE_X25Y36.A6      net (fanout=7)        0.361   Direct/two_dist_conf
+    SLICE_X25Y36.A       Tilo                  0.259   Direct/three_dist/InstructionW[31]_InstructionD[31]_select_36_OUT<3>21
+                                                       Direct/three_dist/Mmux_outtype11
+    SLICE_X23Y34.B5      net (fanout=1)        0.561   Direct/three_dist/Mmux_outtype1
+    SLICE_X23Y34.B       Tilo                  0.259   Direct/three_dist/Mmux_outtype11
+                                                       Direct/three_dist/Mmux_outtype13
+    SLICE_X21Y32.A5      net (fanout=138)      0.648   ConflictTypeD<0>
+    SLICE_X21Y32.A       Tilo                  0.259   Imem/N21
+                                                       Imem/Mmux__n001971
+    RAMB16_X1Y18.ADDRA11 net (fanout=1)        1.042   Imem/_n0019<6>
+    RAMB16_X1Y18.CLKA    Trcck_ADDRA           0.350   Imem/Mram_InstMem
+                                                       Imem/Mram_InstMem
     -------------------------------------------------  ---------------------------
-    Total                                      9.221ns (3.209ns logic, 6.012ns route)
-                                                       (34.8% logic, 65.2% route)
+    Total                                      9.812ns (4.419ns logic, 5.393ns route)
+                                                       (45.0% logic, 55.0% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point ALUOutM_18 (SLICE_X19Y25.CX), 1642 paths
+Paths for end point Imem/Mram_InstMem (RAMB16_X1Y18.ADDRA5), 2985 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     -3.247ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               register/Mram_regFile1 (RAM)
-  Destination:          ALUOutM_18 (FF)
-  Requirement:          5.000ns
-  Data Path Delay:      8.133ns (Levels of Logic = 8)
-  Clock Path Skew:      -0.079ns (0.411 - 0.490)
-  Source Clock:         Clk_BUFGP falling at 5.000ns
+Slack (setup path):     0.098ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               Imem/Mram_InstMem (RAM)
+  Destination:          Imem/Mram_InstMem (RAM)
+  Requirement:          10.000ns
+  Data Path Delay:      9.867ns (Levels of Logic = 9)
+  Clock Path Skew:      0.000ns
+  Source Clock:         Clk_BUFGP rising at 0.000ns
   Destination Clock:    Clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
 
@@ -213,52 +216,54 @@ Slack (setup path):     -3.247ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: register/Mram_regFile1 to ALUOutM_18
+  Maximum Data Path at Slow Process Corner: Imem/Mram_InstMem to Imem/Mram_InstMem
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    RAMB8_X1Y16.DOADO3   Trcko_DOA_REG         1.600   register/Mram_regFile1
-                                                       register/Mram_regFile1
-    SLICE_X24Y32.A5      net (fanout=2)        1.114   WriteDataE<3>
-    SLICE_X24Y32.AMUX    Tilo                  0.251   ReadSrcBE<29>
-                                                       mux5711
-    SLICE_X25Y22.A4      net (fanout=1)        0.982   ReadSrcBE<3>
-    SLICE_X25Y22.A       Tilo                  0.259   Data_selector/Mmux_SrcAE21
-                                                       Data_selector/Mmux_SrcBE263
-    SLICE_X20Y22.D4      net (fanout=4)        0.469   SrcBE<3>
-    SLICE_X20Y22.COUT    Topcyd                0.260   ALU/Madd_SrcA[31]_SrcB[31]_add_3_OUT_cy<3>
-                                                       ALU/Madd_SrcA[31]_SrcB[31]_add_3_OUT_lut<3>
-                                                       ALU/Madd_SrcA[31]_SrcB[31]_add_3_OUT_cy<3>
-    SLICE_X20Y23.CIN     net (fanout=1)        0.003   ALU/Madd_SrcA[31]_SrcB[31]_add_3_OUT_cy<3>
-    SLICE_X20Y23.COUT    Tbyp                  0.076   ALU/Madd_SrcA[31]_SrcB[31]_add_3_OUT_cy<7>
-                                                       ALU/Madd_SrcA[31]_SrcB[31]_add_3_OUT_cy<7>
-    SLICE_X20Y24.CIN     net (fanout=1)        0.082   ALU/Madd_SrcA[31]_SrcB[31]_add_3_OUT_cy<7>
-    SLICE_X20Y24.COUT    Tbyp                  0.076   ALU/Madd_SrcA[31]_SrcB[31]_add_3_OUT_cy<11>
-                                                       ALU/Madd_SrcA[31]_SrcB[31]_add_3_OUT_cy<11>
-    SLICE_X20Y25.CIN     net (fanout=1)        0.003   ALU/Madd_SrcA[31]_SrcB[31]_add_3_OUT_cy<11>
-    SLICE_X20Y25.COUT    Tbyp                  0.076   ALU/Madd_SrcA[31]_SrcB[31]_add_3_OUT_cy<15>
-                                                       ALU/Madd_SrcA[31]_SrcB[31]_add_3_OUT_cy<15>
-    SLICE_X20Y26.CIN     net (fanout=1)        0.003   ALU/Madd_SrcA[31]_SrcB[31]_add_3_OUT_cy<15>
-    SLICE_X20Y26.CMUX    Tcinc                 0.272   ALU/Madd_SrcA[31]_SrcB[31]_add_3_OUT_cy<19>
-                                                       ALU/Madd_SrcA[31]_SrcB[31]_add_3_OUT_cy<19>
-    SLICE_X21Y27.A3      net (fanout=1)        0.851   ALU/SrcA[31]_SrcB[31]_add_3_OUT<18>
-    SLICE_X21Y27.A       Tilo                  0.259   ALU/N8
-                                                       ALU/_n0107<18>
-    SLICE_X19Y25.CX      net (fanout=2)        1.434   ALURes<18>
-    SLICE_X19Y25.CLK     Tdick                 0.063   ALUOutM<18>
-                                                       ALUOutM_18
+    RAMB16_X1Y18.DOA16   Trcko_DOA             1.850   Imem/Mram_InstMem
+                                                       Imem/Mram_InstMem
+    SLICE_X25Y37.A6      net (fanout=5)        0.973   InstructionD<16>
+    SLICE_X25Y37.A       Tilo                  0.259   Direct/InstructionD<23>
+                                                       Direct/Mmux_InstructionD81
+    SLICE_X22Y36.B5      net (fanout=6)        0.580   Direct/InstructionD<16>
+    SLICE_X22Y36.B       Tilo                  0.203   Direct/one_dist/N2
+                                                       Direct/one_dist/InstructionD[20]_InstructionE[15]_equal_2_o5_SW0
+    SLICE_X22Y36.A5      net (fanout=1)        0.222   Direct/one_dist/N2
+    SLICE_X22Y36.A       Tilo                  0.203   Direct/one_dist/N2
+                                                       Direct/one_dist/InstructionD[20]_InstructionE[15]_equal_2_o5
+    SLICE_X21Y37.B5      net (fanout=2)        0.514   Direct/one_dist/InstructionD[20]_InstructionE[15]_equal_2_o
+    SLICE_X21Y37.B       Tilo                  0.259   Direct/one_dist/conf5
+                                                       Direct/one_dist/conf_SW0
+    SLICE_X21Y37.A5      net (fanout=1)        0.187   Direct/one_dist/N8
+    SLICE_X21Y37.A       Tilo                  0.259   Direct/one_dist/conf5
+                                                       Direct/one_dist/conf
+    SLICE_X21Y36.A6      net (fanout=7)        0.305   Direct/one_dist_conf
+    SLICE_X21Y36.A       Tilo                  0.259   Direct/second_type<3>
+                                                       Direct/two_dist/Mmux_conf13
+    SLICE_X23Y34.A6      net (fanout=7)        0.550   Direct/two_dist_conf
+    SLICE_X23Y34.A       Tilo                  0.259   Direct/three_dist/Mmux_outtype11
+                                                       Direct/three_dist/Mmux_outtype2111
+    SLICE_X21Y34.A3      net (fanout=2)        0.483   Direct/three_dist/Mmux_outtype211
+    SLICE_X21Y34.A       Tilo                  0.259   Direct/three_dist/N15
+                                                       Direct/three_dist/Mmux_outtype24
+    SLICE_X23Y33.D3      net (fanout=138)      0.626   ConflictTypeD<1>
+    SLICE_X23Y33.D       Tilo                  0.259   Imem/_n0019<0>
+                                                       Imem/Mmux__n001911
+    RAMB16_X1Y18.ADDRA5  net (fanout=1)        1.008   Imem/_n0019<0>
+    RAMB16_X1Y18.CLKA    Trcck_ADDRA           0.350   Imem/Mram_InstMem
+                                                       Imem/Mram_InstMem
     -------------------------------------------------  ---------------------------
-    Total                                      8.133ns (3.192ns logic, 4.941ns route)
-                                                       (39.2% logic, 60.8% route)
+    Total                                      9.867ns (4.419ns logic, 5.448ns route)
+                                                       (44.8% logic, 55.2% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     -3.217ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               register/Mram_regFile1 (RAM)
-  Destination:          ALUOutM_18 (FF)
-  Requirement:          5.000ns
-  Data Path Delay:      8.103ns (Levels of Logic = 6)
-  Clock Path Skew:      -0.079ns (0.411 - 0.490)
-  Source Clock:         Clk_BUFGP falling at 5.000ns
+Slack (setup path):     0.173ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               Imem/Mram_InstMem (RAM)
+  Destination:          Imem/Mram_InstMem (RAM)
+  Requirement:          10.000ns
+  Data Path Delay:      9.792ns (Levels of Logic = 9)
+  Clock Path Skew:      0.000ns
+  Source Clock:         Clk_BUFGP rising at 0.000ns
   Destination Clock:    Clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
 
@@ -268,46 +273,54 @@ Slack (setup path):     -3.217ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: register/Mram_regFile1 to ALUOutM_18
+  Maximum Data Path at Slow Process Corner: Imem/Mram_InstMem to Imem/Mram_InstMem
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    RAMB8_X1Y16.DOADO9   Trcko_DOA_REG         1.600   register/Mram_regFile1
-                                                       register/Mram_regFile1
-    SLICE_X19Y32.A6      net (fanout=2)        1.527   WriteDataE<9>
-    SLICE_X19Y32.A       Tilo                  0.259   ReadSrcBE<9>
-                                                       mux6311
-    SLICE_X19Y24.A6      net (fanout=1)        0.736   ReadSrcBE<9>
-    SLICE_X19Y24.A       Tilo                  0.259   Data_selector/Mmux_SrcAE641
-                                                       Data_selector/Mmux_SrcBE323
-    SLICE_X20Y24.B5      net (fanout=4)        0.386   SrcBE<9>
-    SLICE_X20Y24.COUT    Topcyb                0.375   ALU/Madd_SrcA[31]_SrcB[31]_add_3_OUT_cy<11>
-                                                       ALU/Madd_SrcA[31]_SrcB[31]_add_3_OUT_lut<9>
-                                                       ALU/Madd_SrcA[31]_SrcB[31]_add_3_OUT_cy<11>
-    SLICE_X20Y25.CIN     net (fanout=1)        0.003   ALU/Madd_SrcA[31]_SrcB[31]_add_3_OUT_cy<11>
-    SLICE_X20Y25.COUT    Tbyp                  0.076   ALU/Madd_SrcA[31]_SrcB[31]_add_3_OUT_cy<15>
-                                                       ALU/Madd_SrcA[31]_SrcB[31]_add_3_OUT_cy<15>
-    SLICE_X20Y26.CIN     net (fanout=1)        0.003   ALU/Madd_SrcA[31]_SrcB[31]_add_3_OUT_cy<15>
-    SLICE_X20Y26.CMUX    Tcinc                 0.272   ALU/Madd_SrcA[31]_SrcB[31]_add_3_OUT_cy<19>
-                                                       ALU/Madd_SrcA[31]_SrcB[31]_add_3_OUT_cy<19>
-    SLICE_X21Y27.A3      net (fanout=1)        0.851   ALU/SrcA[31]_SrcB[31]_add_3_OUT<18>
-    SLICE_X21Y27.A       Tilo                  0.259   ALU/N8
-                                                       ALU/_n0107<18>
-    SLICE_X19Y25.CX      net (fanout=2)        1.434   ALURes<18>
-    SLICE_X19Y25.CLK     Tdick                 0.063   ALUOutM<18>
-                                                       ALUOutM_18
+    RAMB16_X1Y18.DOA18   Trcko_DOA             1.850   Imem/Mram_InstMem
+                                                       Imem/Mram_InstMem
+    SLICE_X23Y37.C6      net (fanout=5)        1.024   InstructionD<18>
+    SLICE_X23Y37.C       Tilo                  0.259   Direct/InstructionM<27>
+                                                       Direct/Mmux_InstructionD101
+    SLICE_X22Y36.B4      net (fanout=6)        0.454   Direct/InstructionD<18>
+    SLICE_X22Y36.B       Tilo                  0.203   Direct/one_dist/N2
+                                                       Direct/one_dist/InstructionD[20]_InstructionE[15]_equal_2_o5_SW0
+    SLICE_X22Y36.A5      net (fanout=1)        0.222   Direct/one_dist/N2
+    SLICE_X22Y36.A       Tilo                  0.203   Direct/one_dist/N2
+                                                       Direct/one_dist/InstructionD[20]_InstructionE[15]_equal_2_o5
+    SLICE_X21Y37.B5      net (fanout=2)        0.514   Direct/one_dist/InstructionD[20]_InstructionE[15]_equal_2_o
+    SLICE_X21Y37.B       Tilo                  0.259   Direct/one_dist/conf5
+                                                       Direct/one_dist/conf_SW0
+    SLICE_X21Y37.A5      net (fanout=1)        0.187   Direct/one_dist/N8
+    SLICE_X21Y37.A       Tilo                  0.259   Direct/one_dist/conf5
+                                                       Direct/one_dist/conf
+    SLICE_X21Y36.A6      net (fanout=7)        0.305   Direct/one_dist_conf
+    SLICE_X21Y36.A       Tilo                  0.259   Direct/second_type<3>
+                                                       Direct/two_dist/Mmux_conf13
+    SLICE_X23Y34.A6      net (fanout=7)        0.550   Direct/two_dist_conf
+    SLICE_X23Y34.A       Tilo                  0.259   Direct/three_dist/Mmux_outtype11
+                                                       Direct/three_dist/Mmux_outtype2111
+    SLICE_X21Y34.A3      net (fanout=2)        0.483   Direct/three_dist/Mmux_outtype211
+    SLICE_X21Y34.A       Tilo                  0.259   Direct/three_dist/N15
+                                                       Direct/three_dist/Mmux_outtype24
+    SLICE_X23Y33.D3      net (fanout=138)      0.626   ConflictTypeD<1>
+    SLICE_X23Y33.D       Tilo                  0.259   Imem/_n0019<0>
+                                                       Imem/Mmux__n001911
+    RAMB16_X1Y18.ADDRA5  net (fanout=1)        1.008   Imem/_n0019<0>
+    RAMB16_X1Y18.CLKA    Trcck_ADDRA           0.350   Imem/Mram_InstMem
+                                                       Imem/Mram_InstMem
     -------------------------------------------------  ---------------------------
-    Total                                      8.103ns (3.163ns logic, 4.940ns route)
-                                                       (39.0% logic, 61.0% route)
+    Total                                      9.792ns (4.419ns logic, 5.373ns route)
+                                                       (45.1% logic, 54.9% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     -3.073ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               register/Mram_regFile1 (RAM)
-  Destination:          ALUOutM_18 (FF)
-  Requirement:          5.000ns
-  Data Path Delay:      7.959ns (Levels of Logic = 7)
-  Clock Path Skew:      -0.079ns (0.411 - 0.490)
-  Source Clock:         Clk_BUFGP falling at 5.000ns
+Slack (setup path):     0.215ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               Imem/Mram_InstMem (RAM)
+  Destination:          Imem/Mram_InstMem (RAM)
+  Requirement:          10.000ns
+  Data Path Delay:      9.750ns (Levels of Logic = 9)
+  Clock Path Skew:      0.000ns
+  Source Clock:         Clk_BUFGP rising at 0.000ns
   Destination Clock:    Clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
 
@@ -317,52 +330,57 @@ Slack (setup path):     -3.073ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: register/Mram_regFile1 to ALUOutM_18
+  Maximum Data Path at Slow Process Corner: Imem/Mram_InstMem to Imem/Mram_InstMem
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    RAMB8_X1Y16.DOADO4   Trcko_DOA_REG         1.600   register/Mram_regFile1
-                                                       register/Mram_regFile1
-    SLICE_X31Y32.A3      net (fanout=2)        0.690   WriteDataE<4>
-    SLICE_X31Y32.AMUX    Tilo                  0.313   ReadSrcBE<30>
-                                                       mux5811
-    SLICE_X23Y23.A6      net (fanout=1)        1.261   ReadSrcBE<4>
-    SLICE_X23Y23.A       Tilo                  0.259   Data_selector/Mmux_SrcAE541
-                                                       Data_selector/Mmux_SrcBE273
-    SLICE_X20Y23.A6      net (fanout=4)        0.322   SrcBE<4>
-    SLICE_X20Y23.COUT    Topcya                0.395   ALU/Madd_SrcA[31]_SrcB[31]_add_3_OUT_cy<7>
-                                                       ALU/Madd_SrcA[31]_SrcB[31]_add_3_OUT_lut<4>
-                                                       ALU/Madd_SrcA[31]_SrcB[31]_add_3_OUT_cy<7>
-    SLICE_X20Y24.CIN     net (fanout=1)        0.082   ALU/Madd_SrcA[31]_SrcB[31]_add_3_OUT_cy<7>
-    SLICE_X20Y24.COUT    Tbyp                  0.076   ALU/Madd_SrcA[31]_SrcB[31]_add_3_OUT_cy<11>
-                                                       ALU/Madd_SrcA[31]_SrcB[31]_add_3_OUT_cy<11>
-    SLICE_X20Y25.CIN     net (fanout=1)        0.003   ALU/Madd_SrcA[31]_SrcB[31]_add_3_OUT_cy<11>
-    SLICE_X20Y25.COUT    Tbyp                  0.076   ALU/Madd_SrcA[31]_SrcB[31]_add_3_OUT_cy<15>
-                                                       ALU/Madd_SrcA[31]_SrcB[31]_add_3_OUT_cy<15>
-    SLICE_X20Y26.CIN     net (fanout=1)        0.003   ALU/Madd_SrcA[31]_SrcB[31]_add_3_OUT_cy<15>
-    SLICE_X20Y26.CMUX    Tcinc                 0.272   ALU/Madd_SrcA[31]_SrcB[31]_add_3_OUT_cy<19>
-                                                       ALU/Madd_SrcA[31]_SrcB[31]_add_3_OUT_cy<19>
-    SLICE_X21Y27.A3      net (fanout=1)        0.851   ALU/SrcA[31]_SrcB[31]_add_3_OUT<18>
-    SLICE_X21Y27.A       Tilo                  0.259   ALU/N8
-                                                       ALU/_n0107<18>
-    SLICE_X19Y25.CX      net (fanout=2)        1.434   ALURes<18>
-    SLICE_X19Y25.CLK     Tdick                 0.063   ALUOutM<18>
-                                                       ALUOutM_18
+    RAMB16_X1Y18.DOA16   Trcko_DOA             1.850   Imem/Mram_InstMem
+                                                       Imem/Mram_InstMem
+    SLICE_X25Y37.A6      net (fanout=5)        0.973   InstructionD<16>
+    SLICE_X25Y37.A       Tilo                  0.259   Direct/InstructionD<23>
+                                                       Direct/Mmux_InstructionD81
+    SLICE_X24Y37.D1      net (fanout=6)        0.623   Direct/InstructionD<16>
+    SLICE_X24Y37.D       Tilo                  0.205   Direct/one_dist/N01
+                                                       Direct/one_dist/outtype<2>4_SW0
+    SLICE_X24Y37.C6      net (fanout=1)        0.118   Direct/one_dist/N01
+    SLICE_X24Y37.C       Tilo                  0.205   Direct/one_dist/N01
+                                                       Direct/one_dist/outtype<2>4
+    SLICE_X21Y37.B6      net (fanout=2)        0.454   Direct/one_dist/outtype<2>4
+    SLICE_X21Y37.B       Tilo                  0.259   Direct/one_dist/conf5
+                                                       Direct/one_dist/conf_SW0
+    SLICE_X21Y37.A5      net (fanout=1)        0.187   Direct/one_dist/N8
+    SLICE_X21Y37.A       Tilo                  0.259   Direct/one_dist/conf5
+                                                       Direct/one_dist/conf
+    SLICE_X21Y36.A6      net (fanout=7)        0.305   Direct/one_dist_conf
+    SLICE_X21Y36.A       Tilo                  0.259   Direct/second_type<3>
+                                                       Direct/two_dist/Mmux_conf13
+    SLICE_X23Y34.A6      net (fanout=7)        0.550   Direct/two_dist_conf
+    SLICE_X23Y34.A       Tilo                  0.259   Direct/three_dist/Mmux_outtype11
+                                                       Direct/three_dist/Mmux_outtype2111
+    SLICE_X21Y34.A3      net (fanout=2)        0.483   Direct/three_dist/Mmux_outtype211
+    SLICE_X21Y34.A       Tilo                  0.259   Direct/three_dist/N15
+                                                       Direct/three_dist/Mmux_outtype24
+    SLICE_X23Y33.D3      net (fanout=138)      0.626   ConflictTypeD<1>
+    SLICE_X23Y33.D       Tilo                  0.259   Imem/_n0019<0>
+                                                       Imem/Mmux__n001911
+    RAMB16_X1Y18.ADDRA5  net (fanout=1)        1.008   Imem/_n0019<0>
+    RAMB16_X1Y18.CLKA    Trcck_ADDRA           0.350   Imem/Mram_InstMem
+                                                       Imem/Mram_InstMem
     -------------------------------------------------  ---------------------------
-    Total                                      7.959ns (3.313ns logic, 4.646ns route)
-                                                       (41.6% logic, 58.4% route)
+    Total                                      9.750ns (4.423ns logic, 5.327ns route)
+                                                       (45.4% logic, 54.6% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point ALUOutM_22 (SLICE_X23Y30.C5), 1986 paths
+Paths for end point Imem/Mram_InstMem (RAMB16_X1Y18.ADDRA10), 2990 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     -2.743ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               register/Mram_regFile1 (RAM)
-  Destination:          ALUOutM_22 (FF)
-  Requirement:          5.000ns
-  Data Path Delay:      7.650ns (Levels of Logic = 10)
-  Clock Path Skew:      -0.058ns (0.432 - 0.490)
-  Source Clock:         Clk_BUFGP falling at 5.000ns
+Slack (setup path):     0.125ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               Imem/Mram_InstMem (RAM)
+  Destination:          Imem/Mram_InstMem (RAM)
+  Requirement:          10.000ns
+  Data Path Delay:      9.840ns (Levels of Logic = 9)
+  Clock Path Skew:      0.000ns
+  Source Clock:         Clk_BUFGP rising at 0.000ns
   Destination Clock:    Clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
 
@@ -372,56 +390,54 @@ Slack (setup path):     -2.743ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: register/Mram_regFile1 to ALUOutM_22
+  Maximum Data Path at Slow Process Corner: Imem/Mram_InstMem to Imem/Mram_InstMem
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    RAMB8_X1Y16.DOADO3   Trcko_DOA_REG         1.600   register/Mram_regFile1
-                                                       register/Mram_regFile1
-    SLICE_X24Y32.A5      net (fanout=2)        1.114   WriteDataE<3>
-    SLICE_X24Y32.AMUX    Tilo                  0.251   ReadSrcBE<29>
-                                                       mux5711
-    SLICE_X25Y22.A4      net (fanout=1)        0.982   ReadSrcBE<3>
-    SLICE_X25Y22.A       Tilo                  0.259   Data_selector/Mmux_SrcAE21
-                                                       Data_selector/Mmux_SrcBE263
-    SLICE_X22Y22.D4      net (fanout=4)        0.463   SrcBE<3>
-    SLICE_X22Y22.COUT    Topcyd                0.261   ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<3>
-                                                       ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_lut<3>
-                                                       ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<3>
-    SLICE_X22Y23.CIN     net (fanout=1)        0.003   ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<3>
-    SLICE_X22Y23.COUT    Tbyp                  0.076   ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<7>
-                                                       ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<7>
-    SLICE_X22Y24.CIN     net (fanout=1)        0.082   ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<7>
-    SLICE_X22Y24.COUT    Tbyp                  0.076   ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<11>
-                                                       ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<11>
-    SLICE_X22Y25.CIN     net (fanout=1)        0.003   ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<11>
-    SLICE_X22Y25.COUT    Tbyp                  0.076   ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<15>
-                                                       ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<15>
-    SLICE_X22Y26.CIN     net (fanout=1)        0.003   ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<15>
-    SLICE_X22Y26.COUT    Tbyp                  0.076   ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<19>
-                                                       ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<19>
-    SLICE_X22Y27.CIN     net (fanout=1)        0.003   ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<19>
-    SLICE_X22Y27.CMUX    Tcinc                 0.261   ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<23>
-                                                       ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<23>
-    SLICE_X23Y28.C3      net (fanout=1)        0.850   ALU/SrcA[31]_SrcB[31]_sub_5_OUT<22>
-    SLICE_X23Y28.C       Tilo                  0.259   ALU/Zero<31>3
-                                                       ALU/_n0107<22>
-    SLICE_X23Y30.C5      net (fanout=2)        0.725   ALURes<22>
-    SLICE_X23Y30.CLK     Tas                   0.227   ALUOutM<31>
-                                                       ALURes<22>_rt
-                                                       ALUOutM_22
+    RAMB16_X1Y18.DOA16   Trcko_DOA             1.850   Imem/Mram_InstMem
+                                                       Imem/Mram_InstMem
+    SLICE_X25Y37.A6      net (fanout=5)        0.973   InstructionD<16>
+    SLICE_X25Y37.A       Tilo                  0.259   Direct/InstructionD<23>
+                                                       Direct/Mmux_InstructionD81
+    SLICE_X22Y36.B5      net (fanout=6)        0.580   Direct/InstructionD<16>
+    SLICE_X22Y36.B       Tilo                  0.203   Direct/one_dist/N2
+                                                       Direct/one_dist/InstructionD[20]_InstructionE[15]_equal_2_o5_SW0
+    SLICE_X22Y36.A5      net (fanout=1)        0.222   Direct/one_dist/N2
+    SLICE_X22Y36.A       Tilo                  0.203   Direct/one_dist/N2
+                                                       Direct/one_dist/InstructionD[20]_InstructionE[15]_equal_2_o5
+    SLICE_X21Y37.B5      net (fanout=2)        0.514   Direct/one_dist/InstructionD[20]_InstructionE[15]_equal_2_o
+    SLICE_X21Y37.B       Tilo                  0.259   Direct/one_dist/conf5
+                                                       Direct/one_dist/conf_SW0
+    SLICE_X21Y37.A5      net (fanout=1)        0.187   Direct/one_dist/N8
+    SLICE_X21Y37.A       Tilo                  0.259   Direct/one_dist/conf5
+                                                       Direct/one_dist/conf
+    SLICE_X21Y36.A6      net (fanout=7)        0.305   Direct/one_dist_conf
+    SLICE_X21Y36.A       Tilo                  0.259   Direct/second_type<3>
+                                                       Direct/two_dist/Mmux_conf13
+    SLICE_X23Y34.A6      net (fanout=7)        0.550   Direct/two_dist_conf
+    SLICE_X23Y34.A       Tilo                  0.259   Direct/three_dist/Mmux_outtype11
+                                                       Direct/three_dist/Mmux_outtype2111
+    SLICE_X21Y34.A3      net (fanout=2)        0.483   Direct/three_dist/Mmux_outtype211
+    SLICE_X21Y34.A       Tilo                  0.259   Direct/three_dist/N15
+                                                       Direct/three_dist/Mmux_outtype24
+    SLICE_X23Y33.A6      net (fanout=138)      0.428   ConflictTypeD<1>
+    SLICE_X23Y33.A       Tilo                  0.259   Imem/_n0019<0>
+                                                       Imem/Mmux__n001961
+    RAMB16_X1Y18.ADDRA10 net (fanout=1)        1.179   Imem/_n0019<5>
+    RAMB16_X1Y18.CLKA    Trcck_ADDRA           0.350   Imem/Mram_InstMem
+                                                       Imem/Mram_InstMem
     -------------------------------------------------  ---------------------------
-    Total                                      7.650ns (3.422ns logic, 4.228ns route)
-                                                       (44.7% logic, 55.3% route)
+    Total                                      9.840ns (4.419ns logic, 5.421ns route)
+                                                       (44.9% logic, 55.1% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     -2.701ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               register/Mram_regFile1 (RAM)
-  Destination:          ALUOutM_22 (FF)
-  Requirement:          5.000ns
-  Data Path Delay:      7.608ns (Levels of Logic = 8)
-  Clock Path Skew:      -0.058ns (0.432 - 0.490)
-  Source Clock:         Clk_BUFGP falling at 5.000ns
+Slack (setup path):     0.200ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               Imem/Mram_InstMem (RAM)
+  Destination:          Imem/Mram_InstMem (RAM)
+  Requirement:          10.000ns
+  Data Path Delay:      9.765ns (Levels of Logic = 9)
+  Clock Path Skew:      0.000ns
+  Source Clock:         Clk_BUFGP rising at 0.000ns
   Destination Clock:    Clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
 
@@ -431,50 +447,54 @@ Slack (setup path):     -2.701ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: register/Mram_regFile1 to ALUOutM_22
+  Maximum Data Path at Slow Process Corner: Imem/Mram_InstMem to Imem/Mram_InstMem
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    RAMB8_X1Y16.DOADO9   Trcko_DOA_REG         1.600   register/Mram_regFile1
-                                                       register/Mram_regFile1
-    SLICE_X19Y32.A6      net (fanout=2)        1.527   WriteDataE<9>
-    SLICE_X19Y32.A       Tilo                  0.259   ReadSrcBE<9>
-                                                       mux6311
-    SLICE_X19Y24.A6      net (fanout=1)        0.736   ReadSrcBE<9>
-    SLICE_X19Y24.A       Tilo                  0.259   Data_selector/Mmux_SrcAE641
-                                                       Data_selector/Mmux_SrcBE323
-    SLICE_X22Y24.B6      net (fanout=4)        0.364   SrcBE<9>
-    SLICE_X22Y24.COUT    Topcyb                0.380   ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<11>
-                                                       ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_lut<9>
-                                                       ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<11>
-    SLICE_X22Y25.CIN     net (fanout=1)        0.003   ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<11>
-    SLICE_X22Y25.COUT    Tbyp                  0.076   ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<15>
-                                                       ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<15>
-    SLICE_X22Y26.CIN     net (fanout=1)        0.003   ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<15>
-    SLICE_X22Y26.COUT    Tbyp                  0.076   ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<19>
-                                                       ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<19>
-    SLICE_X22Y27.CIN     net (fanout=1)        0.003   ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<19>
-    SLICE_X22Y27.CMUX    Tcinc                 0.261   ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<23>
-                                                       ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<23>
-    SLICE_X23Y28.C3      net (fanout=1)        0.850   ALU/SrcA[31]_SrcB[31]_sub_5_OUT<22>
-    SLICE_X23Y28.C       Tilo                  0.259   ALU/Zero<31>3
-                                                       ALU/_n0107<22>
-    SLICE_X23Y30.C5      net (fanout=2)        0.725   ALURes<22>
-    SLICE_X23Y30.CLK     Tas                   0.227   ALUOutM<31>
-                                                       ALURes<22>_rt
-                                                       ALUOutM_22
+    RAMB16_X1Y18.DOA18   Trcko_DOA             1.850   Imem/Mram_InstMem
+                                                       Imem/Mram_InstMem
+    SLICE_X23Y37.C6      net (fanout=5)        1.024   InstructionD<18>
+    SLICE_X23Y37.C       Tilo                  0.259   Direct/InstructionM<27>
+                                                       Direct/Mmux_InstructionD101
+    SLICE_X22Y36.B4      net (fanout=6)        0.454   Direct/InstructionD<18>
+    SLICE_X22Y36.B       Tilo                  0.203   Direct/one_dist/N2
+                                                       Direct/one_dist/InstructionD[20]_InstructionE[15]_equal_2_o5_SW0
+    SLICE_X22Y36.A5      net (fanout=1)        0.222   Direct/one_dist/N2
+    SLICE_X22Y36.A       Tilo                  0.203   Direct/one_dist/N2
+                                                       Direct/one_dist/InstructionD[20]_InstructionE[15]_equal_2_o5
+    SLICE_X21Y37.B5      net (fanout=2)        0.514   Direct/one_dist/InstructionD[20]_InstructionE[15]_equal_2_o
+    SLICE_X21Y37.B       Tilo                  0.259   Direct/one_dist/conf5
+                                                       Direct/one_dist/conf_SW0
+    SLICE_X21Y37.A5      net (fanout=1)        0.187   Direct/one_dist/N8
+    SLICE_X21Y37.A       Tilo                  0.259   Direct/one_dist/conf5
+                                                       Direct/one_dist/conf
+    SLICE_X21Y36.A6      net (fanout=7)        0.305   Direct/one_dist_conf
+    SLICE_X21Y36.A       Tilo                  0.259   Direct/second_type<3>
+                                                       Direct/two_dist/Mmux_conf13
+    SLICE_X23Y34.A6      net (fanout=7)        0.550   Direct/two_dist_conf
+    SLICE_X23Y34.A       Tilo                  0.259   Direct/three_dist/Mmux_outtype11
+                                                       Direct/three_dist/Mmux_outtype2111
+    SLICE_X21Y34.A3      net (fanout=2)        0.483   Direct/three_dist/Mmux_outtype211
+    SLICE_X21Y34.A       Tilo                  0.259   Direct/three_dist/N15
+                                                       Direct/three_dist/Mmux_outtype24
+    SLICE_X23Y33.A6      net (fanout=138)      0.428   ConflictTypeD<1>
+    SLICE_X23Y33.A       Tilo                  0.259   Imem/_n0019<0>
+                                                       Imem/Mmux__n001961
+    RAMB16_X1Y18.ADDRA10 net (fanout=1)        1.179   Imem/_n0019<5>
+    RAMB16_X1Y18.CLKA    Trcck_ADDRA           0.350   Imem/Mram_InstMem
+                                                       Imem/Mram_InstMem
     -------------------------------------------------  ---------------------------
-    Total                                      7.608ns (3.397ns logic, 4.211ns route)
-                                                       (44.7% logic, 55.3% route)
+    Total                                      9.765ns (4.419ns logic, 5.346ns route)
+                                                       (45.3% logic, 54.7% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     -2.700ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               register/Mram_regFile1 (RAM)
-  Destination:          ALUOutM_22 (FF)
-  Requirement:          5.000ns
-  Data Path Delay:      7.607ns (Levels of Logic = 10)
-  Clock Path Skew:      -0.058ns (0.432 - 0.490)
-  Source Clock:         Clk_BUFGP falling at 5.000ns
+Slack (setup path):     0.213ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               Imem/Mram_InstMem (RAM)
+  Destination:          Imem/Mram_InstMem (RAM)
+  Requirement:          10.000ns
+  Data Path Delay:      9.752ns (Levels of Logic = 9)
+  Clock Path Skew:      0.000ns
+  Source Clock:         Clk_BUFGP rising at 0.000ns
   Destination Clock:    Clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
 
@@ -484,131 +504,129 @@ Slack (setup path):     -2.700ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: register/Mram_regFile1 to ALUOutM_22
+  Maximum Data Path at Slow Process Corner: Imem/Mram_InstMem to Imem/Mram_InstMem
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    RAMB8_X1Y16.DOADO2   Trcko_DOA_REG         1.600   register/Mram_regFile1
-                                                       register/Mram_regFile1
-    SLICE_X25Y32.A6      net (fanout=2)        0.855   WriteDataE<2>
-    SLICE_X25Y32.A       Tilo                  0.259   ReadSrcBE<2>
-                                                       mux5411
-    SLICE_X18Y22.C6      net (fanout=1)        1.011   ReadSrcBE<2>
-    SLICE_X18Y22.C       Tilo                  0.204   Data_selector/Mmux_SrcBE231
-                                                       Data_selector/Mmux_SrcBE233
-    SLICE_X22Y22.C5      net (fanout=4)        0.681   SrcBE<2>
-    SLICE_X22Y22.COUT    Topcyc                0.277   ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<3>
-                                                       ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_lut<2>
-                                                       ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<3>
-    SLICE_X22Y23.CIN     net (fanout=1)        0.003   ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<3>
-    SLICE_X22Y23.COUT    Tbyp                  0.076   ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<7>
-                                                       ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<7>
-    SLICE_X22Y24.CIN     net (fanout=1)        0.082   ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<7>
-    SLICE_X22Y24.COUT    Tbyp                  0.076   ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<11>
-                                                       ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<11>
-    SLICE_X22Y25.CIN     net (fanout=1)        0.003   ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<11>
-    SLICE_X22Y25.COUT    Tbyp                  0.076   ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<15>
-                                                       ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<15>
-    SLICE_X22Y26.CIN     net (fanout=1)        0.003   ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<15>
-    SLICE_X22Y26.COUT    Tbyp                  0.076   ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<19>
-                                                       ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<19>
-    SLICE_X22Y27.CIN     net (fanout=1)        0.003   ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<19>
-    SLICE_X22Y27.CMUX    Tcinc                 0.261   ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<23>
-                                                       ALU/Msub_SrcA[31]_SrcB[31]_sub_5_OUT_cy<23>
-    SLICE_X23Y28.C3      net (fanout=1)        0.850   ALU/SrcA[31]_SrcB[31]_sub_5_OUT<22>
-    SLICE_X23Y28.C       Tilo                  0.259   ALU/Zero<31>3
-                                                       ALU/_n0107<22>
-    SLICE_X23Y30.C5      net (fanout=2)        0.725   ALURes<22>
-    SLICE_X23Y30.CLK     Tas                   0.227   ALUOutM<31>
-                                                       ALURes<22>_rt
-                                                       ALUOutM_22
+    RAMB16_X1Y18.DOA16   Trcko_DOA             1.850   Imem/Mram_InstMem
+                                                       Imem/Mram_InstMem
+    SLICE_X25Y37.A6      net (fanout=5)        0.973   InstructionD<16>
+    SLICE_X25Y37.A       Tilo                  0.259   Direct/InstructionD<23>
+                                                       Direct/Mmux_InstructionD81
+    SLICE_X22Y36.B5      net (fanout=6)        0.580   Direct/InstructionD<16>
+    SLICE_X22Y36.B       Tilo                  0.203   Direct/one_dist/N2
+                                                       Direct/one_dist/InstructionD[20]_InstructionE[15]_equal_2_o5_SW0
+    SLICE_X22Y36.A5      net (fanout=1)        0.222   Direct/one_dist/N2
+    SLICE_X22Y36.A       Tilo                  0.203   Direct/one_dist/N2
+                                                       Direct/one_dist/InstructionD[20]_InstructionE[15]_equal_2_o5
+    SLICE_X21Y37.B5      net (fanout=2)        0.514   Direct/one_dist/InstructionD[20]_InstructionE[15]_equal_2_o
+    SLICE_X21Y37.B       Tilo                  0.259   Direct/one_dist/conf5
+                                                       Direct/one_dist/conf_SW0
+    SLICE_X21Y37.A5      net (fanout=1)        0.187   Direct/one_dist/N8
+    SLICE_X21Y37.A       Tilo                  0.259   Direct/one_dist/conf5
+                                                       Direct/one_dist/conf
+    SLICE_X21Y36.A6      net (fanout=7)        0.305   Direct/one_dist_conf
+    SLICE_X21Y36.A       Tilo                  0.259   Direct/second_type<3>
+                                                       Direct/two_dist/Mmux_conf13
+    SLICE_X25Y36.A6      net (fanout=7)        0.361   Direct/two_dist_conf
+    SLICE_X25Y36.A       Tilo                  0.259   Direct/three_dist/InstructionW[31]_InstructionD[31]_select_36_OUT<3>21
+                                                       Direct/three_dist/Mmux_outtype11
+    SLICE_X23Y34.B5      net (fanout=1)        0.561   Direct/three_dist/Mmux_outtype1
+    SLICE_X23Y34.B       Tilo                  0.259   Direct/three_dist/Mmux_outtype11
+                                                       Direct/three_dist/Mmux_outtype13
+    SLICE_X23Y33.A5      net (fanout=138)      0.451   ConflictTypeD<0>
+    SLICE_X23Y33.A       Tilo                  0.259   Imem/_n0019<0>
+                                                       Imem/Mmux__n001961
+    RAMB16_X1Y18.ADDRA10 net (fanout=1)        1.179   Imem/_n0019<5>
+    RAMB16_X1Y18.CLKA    Trcck_ADDRA           0.350   Imem/Mram_InstMem
+                                                       Imem/Mram_InstMem
     -------------------------------------------------  ---------------------------
-    Total                                      7.607ns (3.391ns logic, 4.216ns route)
-                                                       (44.6% logic, 55.4% route)
+    Total                                      9.752ns (4.419ns logic, 5.333ns route)
+                                                       (45.3% logic, 54.7% route)
 
 --------------------------------------------------------------------------------
 
 Hold Paths: TS_Clk = PERIOD TIMEGRP "sys_clk" 100 MHz HIGH 50%;
 --------------------------------------------------------------------------------
 
-Paths for end point Data_memory/Mram_DataMem1 (RAMB16_X1Y10.DIA11), 1 path
+Paths for end point Data_memory/Mram_DataMem2 (RAMB16_X1Y8.DIA0), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.264ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               WriteDataM_11 (FF)
-  Destination:          Data_memory/Mram_DataMem1 (RAM)
-  Requirement:          0.000ns
-  Data Path Delay:      0.268ns (Levels of Logic = 0)
-  Clock Path Skew:      0.004ns (0.117 - 0.113)
-  Source Clock:         Clk_BUFGP rising at 10.000ns
-  Destination Clock:    Clk_BUFGP rising at 10.000ns
-  Clock Uncertainty:    0.000ns
-
-  Minimum Data Path at Fast Process Corner: WriteDataM_11 to Data_memory/Mram_DataMem1
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X33Y20.DQ      Tcko                  0.198   WriteDataM<11>
-                                                       WriteDataM_11
-    RAMB16_X1Y10.DIA11   net (fanout=1)        0.123   WriteDataM<11>
-    RAMB16_X1Y10.CLKA    Trckd_DIA   (-Th)     0.053   Data_memory/Mram_DataMem1
-                                                       Data_memory/Mram_DataMem1
-    -------------------------------------------------  ---------------------------
-    Total                                      0.268ns (0.145ns logic, 0.123ns route)
-                                                       (54.1% logic, 45.9% route)
-
---------------------------------------------------------------------------------
-
-Paths for end point Data_memory/Mram_DataMem1 (RAMB16_X1Y10.DIA4), 1 path
---------------------------------------------------------------------------------
-Slack (hold path):      0.266ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               WriteDataM_4 (FF)
-  Destination:          Data_memory/Mram_DataMem1 (RAM)
+Slack (hold path):      0.265ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               WriteDataM_18 (FF)
+  Destination:          Data_memory/Mram_DataMem2 (RAM)
   Requirement:          0.000ns
   Data Path Delay:      0.270ns (Levels of Logic = 0)
-  Clock Path Skew:      0.004ns (0.117 - 0.113)
+  Clock Path Skew:      0.005ns (0.124 - 0.119)
   Source Clock:         Clk_BUFGP rising at 10.000ns
   Destination Clock:    Clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: WriteDataM_4 to Data_memory/Mram_DataMem1
+  Minimum Data Path at Fast Process Corner: WriteDataM_18 to Data_memory/Mram_DataMem2
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X32Y20.AQ      Tcko                  0.200   WriteDataM<7>
-                                                       WriteDataM_4
-    RAMB16_X1Y10.DIA4    net (fanout=1)        0.123   WriteDataM<4>
-    RAMB16_X1Y10.CLKA    Trckd_DIA   (-Th)     0.053   Data_memory/Mram_DataMem1
-                                                       Data_memory/Mram_DataMem1
+    SLICE_X32Y16.CQ      Tcko                  0.200   WriteDataM<19>
+                                                       WriteDataM_18
+    RAMB16_X1Y8.DIA0     net (fanout=1)        0.123   WriteDataM<18>
+    RAMB16_X1Y8.CLKA     Trckd_DIA   (-Th)     0.053   Data_memory/Mram_DataMem2
+                                                       Data_memory/Mram_DataMem2
     -------------------------------------------------  ---------------------------
     Total                                      0.270ns (0.147ns logic, 0.123ns route)
                                                        (54.4% logic, 45.6% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point Data_memory/Mram_DataMem1 (RAMB16_X1Y10.DIA5), 1 path
+Paths for end point Data_memory/Mram_DataMem2 (RAMB16_X1Y8.DIA2), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.266ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               WriteDataM_5 (FF)
-  Destination:          Data_memory/Mram_DataMem1 (RAM)
+Slack (hold path):      0.291ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               WriteDataM_20 (FF)
+  Destination:          Data_memory/Mram_DataMem2 (RAM)
   Requirement:          0.000ns
-  Data Path Delay:      0.270ns (Levels of Logic = 0)
-  Clock Path Skew:      0.004ns (0.117 - 0.113)
+  Data Path Delay:      0.297ns (Levels of Logic = 0)
+  Clock Path Skew:      0.006ns (0.124 - 0.118)
   Source Clock:         Clk_BUFGP rising at 10.000ns
   Destination Clock:    Clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: WriteDataM_5 to Data_memory/Mram_DataMem1
+  Minimum Data Path at Fast Process Corner: WriteDataM_20 to Data_memory/Mram_DataMem2
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X32Y20.BQ      Tcko                  0.200   WriteDataM<7>
-                                                       WriteDataM_5
-    RAMB16_X1Y10.DIA5    net (fanout=1)        0.123   WriteDataM<5>
-    RAMB16_X1Y10.CLKA    Trckd_DIA   (-Th)     0.053   Data_memory/Mram_DataMem1
-                                                       Data_memory/Mram_DataMem1
+    SLICE_X32Y17.AQ      Tcko                  0.200   WriteDataM<23>
+                                                       WriteDataM_20
+    RAMB16_X1Y8.DIA2     net (fanout=1)        0.150   WriteDataM<20>
+    RAMB16_X1Y8.CLKA     Trckd_DIA   (-Th)     0.053   Data_memory/Mram_DataMem2
+                                                       Data_memory/Mram_DataMem2
     -------------------------------------------------  ---------------------------
-    Total                                      0.270ns (0.147ns logic, 0.123ns route)
-                                                       (54.4% logic, 45.6% route)
+    Total                                      0.297ns (0.147ns logic, 0.150ns route)
+                                                       (49.5% logic, 50.5% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point Data_memory/Mram_DataMem2 (RAMB16_X1Y8.DIA3), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.360ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               WriteDataM_21 (FF)
+  Destination:          Data_memory/Mram_DataMem2 (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      0.366ns (Levels of Logic = 0)
+  Clock Path Skew:      0.006ns (0.124 - 0.118)
+  Source Clock:         Clk_BUFGP rising at 10.000ns
+  Destination Clock:    Clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: WriteDataM_21 to Data_memory/Mram_DataMem2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X32Y17.BQ      Tcko                  0.200   WriteDataM<23>
+                                                       WriteDataM_21
+    RAMB16_X1Y8.DIA3     net (fanout=1)        0.219   WriteDataM<21>
+    RAMB16_X1Y8.CLKA     Trckd_DIA   (-Th)     0.053   Data_memory/Mram_DataMem2
+                                                       Data_memory/Mram_DataMem2
+    -------------------------------------------------  ---------------------------
+    Total                                      0.366ns (0.147ns logic, 0.219ns route)
+                                                       (40.2% logic, 59.8% route)
 
 --------------------------------------------------------------------------------
 
@@ -619,7 +637,7 @@ Slack: 6.876ns (period - min period limit)
   Min period limit: 3.124ns (320.102MHz) (Trper_CLKA(Fmax))
   Physical resource: Data_memory/Mram_DataMem1/CLKA
   Logical resource: Data_memory/Mram_DataMem1/CLKA
-  Location pin: RAMB16_X1Y10.CLKA
+  Location pin: RAMB16_X1Y6.CLKA
   Clock network: Clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 6.876ns (period - min period limit)
@@ -627,7 +645,7 @@ Slack: 6.876ns (period - min period limit)
   Min period limit: 3.124ns (320.102MHz) (Trper_CLKA(Fmax))
   Physical resource: Data_memory/Mram_DataMem2/CLKA
   Logical resource: Data_memory/Mram_DataMem2/CLKA
-  Location pin: RAMB16_X1Y14.CLKA
+  Location pin: RAMB16_X1Y8.CLKA
   Clock network: Clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 6.876ns (period - min period limit)
@@ -635,12 +653,12 @@ Slack: 6.876ns (period - min period limit)
   Min period limit: 3.124ns (320.102MHz) (Trper_CLKA(Fmax))
   Physical resource: Imem/Mram_InstMem/CLKA
   Logical resource: Imem/Mram_InstMem/CLKA
-  Location pin: RAMB16_X1Y28.CLKA
+  Location pin: RAMB16_X1Y18.CLKA
   Clock network: Clk_BUFGP
 --------------------------------------------------------------------------------
 
 
-1 constraint not met.
+All constraints were met.
 
 
 Data Sheet report:
@@ -652,25 +670,25 @@ Clock to Setup on destination clock Clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-Clk            |   11.749|    9.321|    5.311|         |
+Clk            |    9.904|         |    4.831|         |
 ---------------+---------+---------+---------+---------+
 
 
 Timing summary:
 ---------------
 
-Timing errors: 164  Score: 120244  (Setup/Max: 120244, Hold: 0)
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 709334 paths, 0 nets, and 3732 connections
+Constraints cover 608963 paths, 0 nets, and 3243 connections
 
 Design statistics:
-   Minimum period:  18.642ns{1}   (Maximum frequency:  53.642MHz)
+   Minimum period:   9.904ns{1}   (Maximum frequency: 100.969MHz)
 
 
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Thu Dec 06 09:27:26 2018 
+Analysis completed Thu Dec 06 11:05:59 2018 
 --------------------------------------------------------------------------------
 
 Trace Settings:
